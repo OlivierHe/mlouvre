@@ -1,13 +1,236 @@
+{# app/Resources/views/base.html.twig #}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+	<title>Billeterie du Louvre</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+	      <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <style type="text/css">
+
+  			body {
+  				background-color: #961227; 
+  				color: #D9D9CF;
+  			}
+
+  			#content{
+  			 	background-color: #13171F;
+  			}
+
+  			.container {
+  				background-color: #961227;
+  				font-family: 'Raleway', sans-serif;
+  				font-weight: 500;
+  			}
+
+  			@media (max-width: 978px) {
+			    .container {
+			      padding: 0;
+			      margin: auto;
+			    }
+
+			    body {
+			      padding: 0;
+			    }
+			}
+
+			@media (max-width: 300px) {
+				.carousel-caption {
+					
+					bottom: 0;
+					padding: 0;
+				}	
+
+				.carousel-caption h1{
+					font-size: 30px;
+				}
+			}
+
+			header {
+				background-image: url(images/header_img.jpg);
+				background-size: cover;
+			}
+
+			header h1 {
+				display:inline;
+			}
+
+			.container .jumbotron{
+			    border-radius: 0px;
+			    margin: 0;
+			}
+
+			nav {
+				display: block;
+			}
+
+			.navbar-brand {
+				font-size: 15px;
+			}
+
+			.navbar-inverse {
+				 background-image: linear-gradient(to bottom,#1C1F26 0,#010712 100%);
+				 margin-bottom: 0;
+			}
+
+			.btn-default {
+			    background-image: linear-gradient(to bottom,#8f8080 0,#c2c2c2 100%);
+			    text-shadow: 0 1px 0 #787b80;
+			}
+
+			section {
+				min-height: 100%;
+				/*height: 100vh;*/
+			}
+
+			.carousel-caption {
+				text-align: left;
+				left: 3%;
+			}
+
+			.item {
+				opacity: 0.50;
+			}
+
+			.text-grey{
+				color: rgb(171, 199, 255);
+			}
+
+			/* Sepia */
+			.sepia div.item img {
+				-webkit-filter: sepia(0);
+				filter: sepia(0);
+				-webkit-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+			}
+			.sepia div.carousel:hover img{
+				-webkit-filter: sepia(100%);
+				filter: sepia(100%);
+				-webkit-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+			}
+
+			div.carousel {
+				background-color: rgba(0,0,0,1);
+			}
+
+			#logos {
+				padding: 2px;
+			}
+
+			#cgv {
+				padding: 20px 20px 20px 20px;	  
+			}
+
+			#text-cgv {
+				white-space: pre-wrap;
+				padding-left: -20px;
+			}
+
+			.articles {
+				background-color: #010712;
+				background: -webkit-linear-gradient(#1b1e25, #050b15); /* For Safari 5.1 to 6.0 */
+			    background: -o-linear-gradient(#1b1e25, #050b15); /* For Opera 11.1 to 12.0 */
+			    background: -moz-linear-gradient(#1b1e25, #050b15); /* For Firefox 3.6 to 15 */
+			    background: linear-gradient(#1b1e25, #050b15);
+			    border: 1px solid black;
+			    padding: 10px 10px 10px 10px;
+			    border-radius: 5px;
+				font-size: 1.2em;
+			    color: rgb(171, 199, 255);
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+			}
+
+			div#cgv li a{
+				color: rgb(171, 199, 255);
+			}
+
+			div#cgv li a:hover{
+				text-decoration: none;
+				color: white;
+			}
+			
+			#map { 
+				width: 30em;
+				height: 20em; 
+				margin-top: 10px;
+				margin-bottom: 10px;
+				padding-left: 10px;
+			}
+
+			section p{
+				padding-left: 10px;
+			}
+
+			#articles-list {
+				list-style: none;
+			}
+			
+		</style>
+   
+</head>
+<body>
+	<div class="container">
+		<div id="content">
+			<header class="jumbotron jumbotron-fluid">
+			<h1>Billeterie du Louvre</h1>
+			<br><em>Billeterie non officielle</em>
+			</header>
+
+			<nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#page-top">English</a>
+                     <div class="navbar-brand">
+                     	<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                     </div>
+                     <a class="navbar-brand" href="#page-top">Français</a>
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="collapse navbar-collapse pull-right">
+                        <ul class="nav navbar-nav">
+                            <!--<li class="hidden"><a href="#page-top"></a></li>-->
+                            <li><a href="acces_infos_pratiques">Accès & Infos pratiques</a></li>
+                            <li><a href="#contact">Nous contacter</a></li>
+                        </ul>
+                    </div>
+                </div>  <!-- fin div container -->
+            </nav>
+            <!-- breadcrumb a modder -->
+	        <div class="btn-group btn-breadcrumb">
+	            <a href="/" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
+	            <a href="#" class="btn btn-default">Snippets</a>
+	            <a href="#" class="btn btn-default">Breadcrumbs</a>
+	        </div>
+			
+		    <section>
+            {% block section %}
+            {% endblock %}
+            </section>
+
+		    <footer>
+			    <nav class="navbar navbar-inverse">
+	                <div class="container-fluid">
+	                     <a class="navbar-brand" href="cgv">Conditions générales de ventes</a>
+	                </div>
+	            </nav>
+		    </footer>
+		</div>
+	</div>
+	{% block script %}
+    {% endblock %}
+	<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Javascript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
 </html>

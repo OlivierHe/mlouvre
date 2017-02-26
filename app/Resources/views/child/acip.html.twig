@@ -1,0 +1,84 @@
+{# app/Resources/views/child/acip.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block section %}
+	<div id="cgv">
+		<div class="articles">Horaires d'ouverture</div>
+		<p>
+		Le musée est fermé le :
+		<br>
+		<ul>
+			<li>mardi</li>
+			<li>1er mai</li>
+			<li>1er novembre </li>
+			<li>25 décembre</li>
+		</ul>
+		</p>
+		<div class="articles">Tarifs</div>
+		<p>
+		<ul>
+			<li>« normal » à partir de 12 ans à 16 €</li>
+			<li>« enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)</li>
+			<li>« senior » à partir de 60 ans pour 12  €</li>
+			<li>« réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…) *</li>
+		</ul>
+		</p>
+		<p>
+			En cas de tarif réduit une preuve vous sera demandée ( carte d'étudiant, badge d' employé du musée,<br>
+			badge du ministère de la culture, carte de circulation militaire).
+		</p>
+		<div class="articles">Plan d'accès</div>
+		<p>
+		Adresse :<br><br>
+		Situé dans le premier arrondissement de Paris<br>
+		Entrée au niveau de la pyramide
+		<div id="map"></div>
+		</p>
+		<div class="articles">Moyen d'accès</div>
+		<p>
+		<b>En métro</b> : lignes 1 station Palais-Royal/musée du Louvre<br><br>
+
+
+		<b>En bus</b> : bus n° 21,24,27,39,48,68,69,72,81,95<br>
+		<b>Paris l'Open Tour</b> : arrêt face à la pyramide<br><br>
+
+		<b>Stations Velib à proximité du musée</b> :<br>
+		n°1015 : 2 place A. Malraux<br>
+		n°1023 : 165 rue Saint-Honoré<br>
+		n°1014 : 5 rue de l’Echelle<br>
+		n°1013 : 186 rue Saint-Honoré<br><br>
+
+		<b>En voiture</b> : un parc de stationnement souterrain est accessible par l'avenue du général Lemonier, tous les jours de 7h00 à 23h00.<br><br>
+
+		<b>En Batobus</b> : Escale Louvre, quai François Mitterrand<br><br>
+
+		<b>Depuis l'Aéroport d'Orly</b> : RER C direction Champs de Mars-Tour Eiffel, descendre à Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare, descendre à Musée du Louvre, en face de la Pyramide.<br><br>
+
+		<b>Depuis l'Aéroport Charles de Gaulle</b> : RER B direction Massy-Palaiseau, changer à Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre.
+		</p>
+		<!--    fin de section -->
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript">
+		var map;
+		function initMap() {
+		var myLatLng = {lat: 48.860985, lng: 2.335831};
+
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: myLatLng,
+				zoom: 15
+			});
+
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: 'Musée du Louvre'
+			});
+		}
+	</script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrR9savFFygfacCo1EQ2MG9GHlOfDrsWI&callback=initMap">
+	</script>
+{% endblock %}

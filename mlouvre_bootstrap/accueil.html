@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>Billeterie du Louvre</title>
+	      <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+        <style type="text/css">
+
+  			body {
+  				background-color: #961227; 
+  				color: #D9D9CF;
+  			}
+
+  			#content{
+  			 	background-color: #13171F;
+  			}
+
+  			.container {
+  				background-color: #961227;
+  				font-family: 'Raleway', sans-serif;
+  			}
+
+  			@media (max-width: 978px) {
+			    .container {
+			      padding: 0;
+			      margin: auto;
+			    }
+
+			    body {
+			      padding: 0;
+			    }
+			}
+
+			@media (max-width: 300px) {
+				.carousel-caption {
+					
+					bottom: 0;
+					padding: 0;
+				}	
+
+				.carousel-caption h1{
+					font-size: 30px;
+				}
+			}
+
+			header {
+				background-image: url(../web/images/header_img.jpg);
+				background-size: cover;
+			}
+
+			header h1 {
+				display:inline;
+			}
+
+			.container .jumbotron{
+			    border-radius: 0px;
+			    margin: 0;
+			}
+
+			nav {
+				display: block;
+			}
+
+			.navbar-brand {
+				font-size: 15px;
+			}
+
+			.navbar-inverse {
+				 background-image: linear-gradient(to bottom,#1C1F26 0,#010712 100%);
+				 margin-bottom: 0;
+			}
+
+			.btn-default {
+				    background-image: linear-gradient(to bottom,#8f8080 0,#c2c2c2 100%);
+				    text-shadow: 0 1px 0 #787b80;
+			}
+
+			section {
+				min-height: 100%;
+				/*height: 100vh;*/
+			}
+
+			.carousel-caption {
+				text-align: left;
+				left: 3%;
+			}
+
+			.item {
+				opacity: 0.50;
+			}
+
+			.text-grey{
+				color: rgb(171, 199, 255);
+			}
+
+			/* Sepia */
+			.sepia div.item img {
+				-webkit-filter: sepia(0);
+				filter: sepia(0);
+				-webkit-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+			}
+			.sepia div.carousel:hover img{
+				-webkit-filter: sepia(100%);
+				filter: sepia(100%);
+				-webkit-transition: .3s ease-in-out;
+				transition: .3s ease-in-out;
+			}
+
+			div.carousel {
+				background-color: rgba(0,0,0,1);
+			}
+
+			#logos {
+				padding: 2px;
+			}
+		</style>
+   
+</head>
+<body>
+	<div class="container">
+		<div id="content">
+			<header class="jumbotron jumbotron-fluid">
+			<h1>Billeterie du Louvre</h1>
+			<br><em>Billeterie non officielle</em>
+			</header>
+
+			<nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                     <a class="navbar-brand" href="#page-top">English</a>
+                     <div class="navbar-brand">
+                     	<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                     </div>
+                     <a class="navbar-brand" href="#page-top">Français</a>
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="navbar" class="collapse navbar-collapse pull-right">
+                        <ul class="nav navbar-nav">
+                            <li class="hidden"><a href="#page-top"></a></li>
+                            <li><a href="#accueil">Accès & Infos pratiques</a></li>
+                            <li><a href="#contact">Nous contacter</a></li>
+                        </ul>
+                    </div>
+                </div>  <!-- fin div container -->
+            </nav>
+            <!-- breadcrumb a modder -->
+	        <div class="btn-group btn-breadcrumb">
+	            <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
+	            <a href="#" class="btn btn-default">Snippets</a>
+	            <a href="#" class="btn btn-default">Breadcrumbs</a>
+	        </div>
+			
+		    <section>
+
+		        <!-- Caroussel ================================================== -->
+		        <a class="sepia" href="#">
+		        	<div class="carousel slide" data-ride="carousel" data-interval="10000">
+		            	<div class="carousel-inner">
+				            <div class="carousel-caption align-middle">
+					             <h1>Achat de billet en ligne</h1>
+					             <h4 class="hidden-xs">
+					             Collections permanentes, expositions temporaires et musée Eugène Delacroix
+					             </h4>
+					             <p class="text-grey hidden-xs">
+					             Reservez votre billet en ligne, vous receverez une confirmation par courriel.<br>
+					             Ce billet vous permet de couper la file classique.<br>
+					          	 Vous pouvez présenter une impression du billet ou bien présenter le courriel<br>du billet aux guichets.
+					          	 </p>
+				            </div>
+							<div class="item active">
+							   <img src="../web/images/carou_1.jpg" alt="Salut">
+							</div>
+							<div class="item">
+							    <img src="../web/images/carou_2.jpg" alt="Aux">
+							</div>
+							<div class="item">
+							    <img src="../web/images/carou_3.jpg" alt="Gens">  
+							</div>
+				        </div>
+		       		</div>
+				</a>
+				<div id="logos" class="text-right">
+					<img src="../web/images/powered_by_stripe.svg">
+					<img src="../web/images/visa.png">
+					<img src="../web/images/amex.png">
+				</div>
+		    </section>
+
+		    <footer>
+			    <nav class="navbar navbar-inverse">
+	                <div class="container-fluid">
+	                     <a class="navbar-brand" href="#page-top">Conditions générales de ventes</a>
+	                </div>
+	            </nav>
+		    </footer>
+
+		</div>
+	</div>
+	<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Javascript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
