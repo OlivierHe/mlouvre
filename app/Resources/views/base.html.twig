@@ -14,8 +14,10 @@
         <style type="text/css">
 
   			body {
-  				background-color: #961227; 
+				background-image: linear-gradient(to bottom,#961227 0,#350d13 100%);
+  				/*background-color: #961227; */
   				color: #D9D9CF;
+				font-size: 1.9em;
   			}
 
   			#content{
@@ -23,7 +25,6 @@
   			}
 
   			.container {
-  				background-color: #961227;
   				font-family: 'Raleway', sans-serif;
   				font-weight: 500;
   			}
@@ -67,10 +68,6 @@
 
 			nav {
 				display: block;
-			}
-
-			.navbar-brand {
-				font-size: 15px;
 			}
 
 			.navbar-inverse {
@@ -171,7 +168,20 @@
 			#articles-list {
 				list-style: none;
 			}
-			
+
+			.form-control {
+				color: rgb(171, 199, 255);
+				background-color: #1c1f26;
+			}
+
+			form div{
+				padding: 10px 10px 10px 10px;
+			}
+
+			.marge-btn {
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
 		</style>
    
 </head>
@@ -200,14 +210,14 @@
                         <ul class="nav navbar-nav">
                             <!--<li class="hidden"><a href="#page-top"></a></li>-->
                             <li><a href="acces_infos_pratiques">Accès & Infos pratiques</a></li>
-                            <li><a href="#contact">Nous contacter</a></li>
+                            <li><a href="nous_contacter">Nous contacter</a></li>
                         </ul>
                     </div>
                 </div>  <!-- fin div container -->
             </nav>
             <!-- breadcrumb a modder -->
 	        <div class="btn-group btn-breadcrumb">
-	            <a href="/" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
+	            <a href="/" class="btn btn-default"><i class="glyphicon glyphicon-home">&nbsp;Accueil</i></a>
 	            <a href="#" class="btn btn-default">Snippets</a>
 	            <a href="#" class="btn btn-default">Breadcrumbs</a>
 	        </div>

@@ -1,0 +1,110 @@
+<?php 
+//src/AppBundle/Entity/Contact.php
+namespace AppBundle­­\Entity;
+
+use Symfony\Component\Validator\Constraints as Assert;
+
+class Contact
+{
+    /**
+    * @Assert\Length(min=2, message="Il faut 2 caractères minimum")
+    * @Assert\Length(max=100, message="Il faut 100 caractères maximum")
+    * @Assert\NotBlank(message="Vous devez remplir ce champs")
+    * @Assert\Regex(
+    *     pattern="^[a-zA-Z0-9_]*$",
+    *     message="Seul les caractères alphanumériques sont autorisés"
+    * )
+    */
+    private $nom;
+
+    /**
+    * @Assert\Length(min=2, message="Il faut 2 caractères minimum")
+    * @Assert\Length(max=100, message="Il faut 100 caractères maximum")
+    * @Assert\NotBlank(message="Vous devez remplir ce champs")
+    * @Assert\Regex(
+    *     pattern="^[a-zA-Z0-9_]*$",
+    *     message="Seul les caractères alphanumériques sont autorisés"
+    * )
+    */
+    private $prenom;
+
+    /**
+     * @Assert\Email(
+     *     message = "Ceci n’est pas une adresse email valide"
+     * )
+     */
+    private $email;
+
+    /**
+    * @Assert\Length(min=2, message="Il faut 2 caractères minimum")
+    * @Assert\Length(max=100, message="Il faut 100 caractères maximum")
+    * @Assert\NotBlank(message="Vous devez remplir ce champs")
+    * @Assert\Regex(
+    *     pattern="^[a-zA-Z0-9_]*$",
+    *     message="Seul les caractères alphanumériques sont autorisés"
+    * )
+    */
+    private $titremessage;
+
+    /**
+    * @Assert\Length(min=2, message="Il faut 2 caractères minimum")
+    * @Assert\Length(max=5000, message="Il faut 5000 caractères maximum")
+    * @Assert\NotBlank(message="Vous devez remplir ce champs")
+    * @Assert\Regex(
+    *     pattern="^[a-zA-Z0-9_]*$",
+    *     message="Seul les caractères alphanumériques sont autorisés"
+    * )
+    */
+    private $message;
+
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getTitreMessage()
+    {
+        return $this->titremessage;
+    }
+
+    public function setTitreMessage($titremessage)
+    {
+        $this->titremessage = $titremessage;
+    }
+
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+    
+}
