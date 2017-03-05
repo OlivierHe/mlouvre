@@ -1,0 +1,10 @@
+{# app/Resources/views/child/qty_ticket.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block section %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary marge-btn" value="Continuer la réservation"/>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,10 @@
+{# app/Resources/views/child/resa.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block section %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary marge-btn" value="Envoyer"/>
+    {{ form_end(form) }}
+{% endblock %}
