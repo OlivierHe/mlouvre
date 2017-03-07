@@ -1,6 +1,6 @@
 <?php 
-//src/AppBundle/Entity/Resa.php
-namespace AppBundle­­\Entity;
+// src/AppBundle/Entity/Resa.php
+namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -61,7 +61,7 @@ class Resa
     private $pays;
 
     /**
-    * @ORM\Column(type="date")
+    * @ORM\Column(type="string")
     * @Assert\Date()
     * @Assert\NotBlank(message="Vous devez selectionner une date")
     */
@@ -81,10 +81,10 @@ class Resa
     */
     private $type_billets;
 
-    /**
-    * @ORM\Column(type="string")
-    */	
-    private $token;
+    // /**
+    // * @ORM\Column(type="string")
+    // */	
+    // private $_token;
 
     /**
     * @ORM\Column(type="boolean")

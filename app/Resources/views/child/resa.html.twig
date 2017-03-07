@@ -1,10 +1,65 @@
 {# app/Resources/views/child/resa.html.twig #}
 {% extends 'base.html.twig' %}
 
+{% block style %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block scripthead %}
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+         $(document).ready(function() {
+             $.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
+                closeText: 'Fermer', closeStatus: 'Fermer sans modifier',
+                prevText: '&lt;Préc', prevStatus: 'Voir le mois précédent',
+                nextText: 'Suiv&gt;', nextStatus: 'Voir le mois suivant',
+                currentText: 'Courant', currentStatus: 'Voir le mois courant',
+                monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+                'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+                monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
+                'Jul','Aoû','Sep','Oct','Nov','Déc'],
+                monthStatus: 'Voir un autre mois', yearStatus: 'Voir un autre année',
+                weekHeader: 'Sm', weekStatus: '',
+                dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+                dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+                dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+                dayStatus: 'Utiliser DD comme premier jour de la semaine', dateStatus: 'Choisir le DD, MM d',
+                dateFormat: 'dd/mm/yy', firstDay: 0, 
+                initStatus: 'Choisir la date', isRTL: false};
+
+            $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+            $('.date_naissance').datepicker(
+                 );
+            $('.jour_visite').datepicker({
+                minDate: 0
+                });
+        });
+    </script>
+{% endblock %}
+
 {% block section %}
-    {{ form_start(form) }}
+{{ form_start(form) }}
+<h2>Coordonnées</h2>
+    {{ form_row(form.nom) }}
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.pays) }}
+    {{ form_row(form.date_naissance) }}
+    <hr>
+    <h2>Reservation de billets</h2>
+    {{ form_row(form.jour_visite) }}
+    {{ form_row(form.type_billets) }}
+    {{ form_row(form.tarif_reduit) }}
     {{ form_errors(form) }}
-    {{ form_widget(form) }}
     <input type="submit" class="btn btn-primary marge-btn" value="Envoyer"/>
+    <p>Tous les champs sont obligatoires.
+
+    En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+    plus de détails dans la section Accès et infos pratiques</p>
     {{ form_end(form) }}
+{% endblock %}
+
+{% block script %}
 {% endblock %}

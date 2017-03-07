@@ -14,6 +14,8 @@ class MainController extends Controller
      */
     public function accueilAction()
     {
+        //$session = new Session();
+     
         return $this->render('child/accueil.html.twig');
     }
 
@@ -22,7 +24,6 @@ class MainController extends Controller
      */
      public function qtyTicketAction(Request $request)
      {
-
         $form = $this->createForm('AppBundle\Form\QtyType',null,array('attr' => array('class' => 'form-horizontal')));
 
         if ($request->isMethod('POST')) {
@@ -30,17 +31,42 @@ class MainController extends Controller
             $form->handleRequest($request);
 
             if($form->isValid()){
+
                 $data = $form->getData();
-         
-                // $data["quantite"]
-                //var_dump($session->get('tokens'));
+                // sauvegarde la quantité de tickets
+                $request->getSession()->set('quantite_ticket', $data['quantite']);  
+                return $this->redirectToRoute('resa');
             }
         }
 
         return $this->render('child/qty_ticket.html.twig', array(
             'form' => $form->createView()
+        ));    
+     }
+
+    /**
+     * @Route("/reservation", name="resa")
+     */
+     public function resaAction(Request $request)
+     {
+        //$request->getSession()->get('quantite_ticket')
+
+        $form = $this->createForm('AppBundle\Form\ResaType',null,array('attr' => array('class' => 'form-horizontal')));
+
+        if ($request->isMethod('POST')) {
+            // Refill the fields in case the form is not valid.
+            $form->handleRequest($request);
+
+            if($form->isValid()){
+                $data = $form->getData();
+            var_dump($data['tarif_reduit']);
+            }
+        }
+
+
+          return $this->render('child/resa.html.twig', array(
+            'form' => $form->createView()
         ));
-        
      }
 
      /**
