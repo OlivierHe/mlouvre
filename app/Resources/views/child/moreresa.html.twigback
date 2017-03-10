@@ -1,0 +1,96 @@
+{# app/Resources/views/child/moreresa.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block style %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block scripthead %}
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+        var $collectionHolder;
+
+        // setup an "add a tag" link
+        var $addTagLink = $('<a href="#" class="add_tag_link">Ajouter form</a>');
+        var $newLinkLi = $('<div></div>').append($addTagLink);
+
+         $(document).ready(function() {
+             $.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
+                closeText: 'Fermer', closeStatus: 'Fermer sans modifier',
+                prevText: '&lt;Préc', prevStatus: 'Voir le mois précédent',
+                nextText: 'Suiv&gt;', nextStatus: 'Voir le mois suivant',
+                currentText: 'Courant', currentStatus: 'Voir le mois courant',
+                monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+                'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+                monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
+                'Jul','Aoû','Sep','Oct','Nov','Déc'],
+                monthStatus: 'Voir un autre mois', yearStatus: 'Voir un autre année',
+                weekHeader: 'Sm', weekStatus: '',
+                dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+                dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+                dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+                dayStatus: 'Utiliser DD comme premier jour de la semaine', dateStatus: 'Choisir le DD, MM d',
+                dateFormat: 'dd/mm/yy', firstDay: 0, 
+                initStatus: 'Choisir la date', isRTL: false};
+
+            $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+            $('.date_naissance').datepicker(
+                 );
+            $('.jour_visite').datepicker({
+                minDate: 0
+                });
+
+                $collectionHolder = $('#more_resa_moreresa');
+                $collectionHolder.append($newLinkLi);
+
+                $collectionHolder.data('index', $collectionHolder.find(':input').length)
+                
+                $addTagLink.on('click', function(e) {
+                    // prevent the link from creating a "#" on the URL
+                    e.preventDefault();
+
+                    // add a new tag form (see next code block)
+                    addTagForm($collectionHolder, $newLinkLi);
+                });
+
+                function addTagForm($collectionHolder, $newLinkLi) {
+                    // Get the data-prototype explained earlier
+                    var prototype = $collectionHolder.data('prototype');
+
+                    // get the new index
+                    var index = $collectionHolder.data('index');
+                    // Replace '__name__' in the prototype's HTML to
+                    // instead be a number based on how many items we have
+                  
+                    var newForm = prototype.replace(/__name__/g, index);
+                    newForm = newForm.replace(/label__/g, " Billets");
+                    // increase the index with one for the next item
+                    $collectionHolder.data('index', index + 1);
+
+                    // Display the form in the page in an li, before the "Add a tag" link li
+                    var $newFormLi = $('<div></div>').append(newForm);
+                    $newLinkLi.before($newFormLi);
+                }
+
+        });
+    </script>
+{% endblock %}
+
+{% block section %}
+
+{{ form_start(form) }}
+{{ form_row(form.moreresa) }}
+ {{ form_errors(form) }}
+    <input type="submit" class="btn btn-primary marge-btn" value="Envoyer"/>
+    <p>Tous les champs sont obligatoires.
+
+    En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+    plus de détails dans la section Accès et infos pratiques</p>
+{{ form_end(form) }}
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

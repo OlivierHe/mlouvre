@@ -19,7 +19,7 @@ class Resa
     * @ORM\Id
     * @ORM\GeneratedValue(strategy="AUTO")
     */	
-    private $id;
+    protected $id;
 
 
     /**
@@ -32,7 +32,7 @@ class Resa
     * )
     * @Assert\NotBlank(message="Vous devez remplir ce champ")
     */
-    private $nom;
+    protected $nom;
 
     /**
     * @ORM\Column(type="string", length=100)
@@ -44,50 +44,251 @@ class Resa
     * )
     * @Assert\NotBlank(message="Vous devez remplir ce champ")
     */
-    private $prenom;
+    protected $prenom;
 
     /**
     * @ORM\Column(type="string", length=50)
-    * @Assert\Email(
-    *     message = "Ceci n’est pas une adresse email valide"
+    * @Assert\Email(message = "Ceci n’est pas une adresse email valide")
     */
-    private $email;
+    protected $email;
 
     /**
     * @ORM\Column(type="string", length=5)
     * @Assert\Country()
     * @Assert\NotBlank(message="Vous devez  choisir un pays")
     */
-    private $pays;
+    protected $pays;
 
     /**
     * @ORM\Column(type="string")
     * @Assert\Date()
     * @Assert\NotBlank(message="Vous devez selectionner une date")
     */
-    private $date_naissance;
+    protected $date_naissance;
 
     /**
     * @ORM\Column(type="date")
     * @Assert\Date()
     * @Assert\NotBlank(message="Vous devez selectioner une date")
     */
-    private $jour_visite;
+    protected $jour_visite;
 
     /**
     * @ORM\Column(type="string", length=20)
     * @Assert\Choice(choices = {"Journée", "Demi-journée"}, message = "Le choix doit être compris dans la liste")
     * @Assert\NotBlank(message="Vous devez faire un choix")
     */
-    private $type_billets;
+    protected $type_billets;
 
     // /**
     // * @ORM\Column(type="string")
     // */	
-    // private $_token;
+    // protected $_token;
 
     /**
     * @ORM\Column(type="boolean")
     */
-    private $tarif_reduit;
+    protected $tarif_reduit;
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Resa
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return Resa
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Resa
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param string $pays
+     *
+     * @return Resa
+     */
+    public function setPays($pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return string
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+
+    /**
+     * Set dateNaissance
+     *
+     * @param string $dateNaissance
+     *
+     * @return Resa
+     */
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->date_naissance = $dateNaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get dateNaissance
+     *
+     * @return string
+     */
+    public function getDateNaissance()
+    {
+        return $this->date_naissance;
+    }
+
+    /**
+     * Set jourVisite
+     *
+     * @param \DateTime $jourVisite
+     *
+     * @return Resa
+     */
+    public function setJourVisite($jourVisite)
+    {
+        $this->jour_visite = $jourVisite;
+
+        return $this;
+    }
+
+    /**
+     * Get jourVisite
+     *
+     * @return \DateTime
+     */
+    public function getJourVisite()
+    {
+        return $this->jour_visite;
+    }
+
+    /**
+     * Set typeBillets
+     *
+     * @param string $typeBillets
+     *
+     * @return Resa
+     */
+    public function setTypeBillets($typeBillets)
+    {
+        $this->type_billets = $typeBillets;
+
+        return $this;
+    }
+
+    /**
+     * Get typeBillets
+     *
+     * @return string
+     */
+    public function getTypeBillets()
+    {
+        return $this->type_billets;
+    }
+
+    /**
+     * Set tarifReduit
+     *
+     * @param boolean $tarifReduit
+     *
+     * @return Resa
+     */
+    public function setTarifReduit($tarifReduit)
+    {
+        $this->tarif_reduit = $tarifReduit;
+
+        return $this;
+    }
+
+    /**
+     * Get tarifReduit
+     *
+     * @return boolean
+     */
+    public function getTarifReduit()
+    {
+        return $this->tarif_reduit;
+    }
 }

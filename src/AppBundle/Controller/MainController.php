@@ -2,6 +2,10 @@
 
 namespace AppBundle\Controller;
 
+
+use AppBundle\Entity\MoreResa;
+use AppBundle\Entity\Resa;
+use AppBundle\Form\MoreResaType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,9 +53,18 @@ class MainController extends Controller
      */
      public function resaAction(Request $request)
      {
-        //$request->getSession()->get('quantite_ticket')
+        $moreResa = new MoreResa();
+        // mettre condition si qty n'existe pas'
+        $qty = $request->getSession()->get('quantite_ticket');
 
-        $form = $this->createForm('AppBundle\Form\ResaType',null,array('attr' => array('class' => 'form-horizontal')));
+         for ($i = 1; $i <= $qty; $i++) {
+            ${'resa' . $i} = new Resa();
+            $moreResa->getResas()->add(${'resa' . $i});
+        }
+        
+        
+
+        $form = $this->createForm(MoreResaType::class, $moreResa, array('attr' => array('class' => 'form-horizontal')));
 
         if ($request->isMethod('POST')) {
             // Refill the fields in case the form is not valid.
@@ -64,7 +77,7 @@ class MainController extends Controller
         }
 
 
-          return $this->render('child/resa.html.twig', array(
+          return $this->render('child/moreresa.html.twig', array(
             'form' => $form->createView()
         ));
      }
