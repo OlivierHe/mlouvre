@@ -1,10 +1,18 @@
 {# app/Resources/views/child/contact.html.twig #}
 {% extends 'base.html.twig' %}
 
+{% block breadcrumb %}
+ <div class="btn-group btn-breadcrumb">
+    <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
+    <a href="/nous_contacter" class="btn btn-default">{{ "Nous contacter" | trans }}</a>
+</div>
+{% endblock %}
+
 {% block section %}
     {{ form_start(form) }}
     {{ form_errors(form) }}
     {{ form_widget(form) }}
-    <input type="submit" class="btn btn-primary marge-btn" value="Envoyer"/>
+    <input type="submit" class="btn btn-primary marge-btn" value="{{ "Envoyer" | trans}}"/>
     {{ form_end(form) }}
 {% endblock %}

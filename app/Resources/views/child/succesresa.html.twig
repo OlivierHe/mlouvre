@@ -1,0 +1,16 @@
+{# app/Resources/views/child/succesresa.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+ <div class="btn-group btn-breadcrumb">
+    <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
+</div>
+{% endblock %}
+
+{% block section %}
+	<div id="cgv">
+		Votre reservation a bien été prise en compte
+	</div>
+{% endblock %}
+

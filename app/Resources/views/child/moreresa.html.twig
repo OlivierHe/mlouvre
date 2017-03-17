@@ -30,7 +30,9 @@
                 dateFormat: 'dd/mm/yy', firstDay: 0, 
                 initStatus: 'Choisir la date', isRTL: false};
 
-            $.datepicker.setDefaults( $.datepicker.regional[ "fr" ] );
+            $.datepicker.regional['en'] = {dateFormat: 'dd/mm/yy'};
+
+            $.datepicker.setDefaults( $.datepicker.regional[ "{{ app.request.locale }}" ] );
             $('.date_naissance').datepicker(
                  );
             $('.jour_visite').datepicker({
@@ -45,14 +47,14 @@
                     width: 400,
                     modal: true,
                     buttons: {
-                        "Supprimer le billet": function() {
+                        {% trans %}"Supprimer le billet"{% endtrans %} : function() {
                             var id = $( "#dialog-confirm" ).data('id');
                             $('#' + id).slideUp( "slow", function() {
                                 $('#' + id).remove();   
                             })
                             $( this ).dialog( "close" );
                         },
-                            "Annuler": function() {
+                            {% trans %}"Annuler"{% endtrans %} : function() {
                             $( this ).dialog( "close" );
                         }
                     }
@@ -67,10 +69,18 @@
     </script>
 {% endblock %}
 
+{% block breadcrumb %}
+ <div class="btn-group btn-breadcrumb">
+    <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
+    <a href="/quantite_ticket" class="btn btn-default">{{ "Quantité de billets" | trans }}</a>
+</div>
+{% endblock %}
+
 {% block section %}
 
-<div style="display: none;"  id="dialog-confirm" title="Suppression de billet">
-  <p class="alert alert-danger"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Etes vous sûr de vouloir supprimer le billet ?</p>
+<div style="display: none;"  id="dialog-confirm" title="{{ "Suppression de billet" | trans}}">
+  <p class="alert alert-danger"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>{{ "Etes vous sûr de vouloir supprimer le billet ?" | trans}}</p>
 </div>
 
 {{ form_start(form) }}
@@ -79,29 +89,28 @@
 
 {% for resa in form.resas %}
     <div id="billet{{ loop.index }}">
-        <h2>Billet n°{{ loop.index }}</h2>
-        <h3>Coordonnées</h3>
+        <h2>{{ "Billet" | trans}} n°{{ loop.index }}</h2>
+        <h3>{{ "Coordonnées" | trans}}</h3>
         {{ form_row(resa.nom) }}
         {{ form_row(resa.prenom) }}
         {{ form_row(resa.email) }}
         {{ form_row(resa.pays) }}
         {{ form_row(resa.date_naissance) }}
         <hr>
-        <h3>Reservation de billets</h3>
+        <h3>{{ "Reservation de billets" | trans}}</h3>
         {{ form_row(resa.jour_visite) }}
         {{ form_row(resa.type_billets) }}
         {{ form_row(resa.tarif_reduit) }}
-        <input type="button" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="Supprimer le billet"/>
+        <input type="button" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="{{ "Supprimer le billet" | trans}}"/>
     </div>
 {% endfor %}
 
-{#   {{ form_row(form.resas) }}   {{ form_row(form.resas.children.0) }}  #}
 {{ form_errors(form) }}
-    <input type="submit" class="btn btn-primary marge-btn" value="Envoyer"/>
-    <p>Tous les champs sont obligatoires.
+    <input type="submit" class="btn btn-primary marge-btn" value="{{ "Envoyer" | trans}}"/>
+    <p>{{ "Tous les champs sont obligatoires" | trans}}.
 
-    En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
-    plus de détails dans la section Accès et infos pratiques</p>
+    {{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+        plus de détails dans la section Accès et infos pratiques" | trans}}</p>
 {{ form_end(form) }}
 
 {% endblock %}

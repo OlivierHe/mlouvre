@@ -1,20 +1,29 @@
 {# app/Resources/views/child/accueil.html.twig #}
 {% extends 'base.html.twig' %}
 
+{% block breadcrumb %}
+ <div class="btn-group btn-breadcrumb">
+    <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
+</div>
+{% endblock %}
+
 {% block section %}
 <!-- Caroussel ================================================== -->
 <a class="sepia" href="quantite_ticket">
     <div class="carousel slide" data-ride="carousel" data-interval="10000">
         <div class="carousel-inner">
             <div class="carousel-caption align-middle">
-                    <h1>Achat de billet en ligne</h1>
+                    <h1>
+                    {{ "Achat de billets en ligne" | trans}}
+                    </h1>
                     <h4 class="hidden-xs">
-                    Collections permanentes, expositions temporaires et musée Eugène Delacroix
+                    {{ "Collections permanentes, expositions temporaires et musée Eugène Delacroix" | trans}}
                     </h4>
                     <p class="text-grey hidden-xs">
-                    Reservez votre billet en ligne, vous receverez une confirmation par courriel.<br>
-                    Ce billet vous permet de couper la file classique.<br>
-                    Vous pouvez présenter une impression du billet ou bien présenter le courriel<br>du billet aux guichets.
+                    {{ "Reservez votre billet en ligne, vous receverez une confirmation par courriel." | trans}}<br>
+                    {{ "Ce billet vous permet de couper la file classique." | trans}}<br>
+                    {{ "Vous pouvez présenter une impression du billet ou bien présenter le courriel" | trans}}<br>{{ "du billet aux guichets" | trans}}.
                     </p>
             </div>
             <div class="item active">

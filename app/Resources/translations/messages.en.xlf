@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="74fe31b598483c373e2921603105e05c" resname="Accueil">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="36017636c3c8fe809630502d2e0f04ff" resname="Prénom">
+        <source>Prénom</source>
+        <target>Firstname</target>
+      </trans-unit>
+      <trans-unit id="d06b5168e9989d2114d3c397015636fb" resname="Courriel">
+        <source>Courriel</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="1576370d50dabdf729a22f0e0235130a" resname="Titre du message">
+        <source>Titre du message</source>
+        <target>Message title</target>
+      </trans-unit>
+      <trans-unit id="4c2a8fe7eaf24721cc7a9f0175115bd4" resname="Message">
+        <source>Message</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit id="6c51308c891322544007578076e6c4b6" resname="Pays">
+        <source>Pays</source>
+        <target>Country</target>
+      </trans-unit>
+      <trans-unit id="7f5a59abd4a77dfa4bb00e0f47fb22e2" resname="Date de naissance">
+        <source>Date de naissance</source>
+        <target>Date of birth</target>
+      </trans-unit>
+      <trans-unit id="c35d67985ff7e2745659ca62aad54165" resname="Cliquez ici">
+        <source>Cliquez ici</source>
+        <target>Click here</target>
+      </trans-unit>
+      <trans-unit id="b0c4c6f4e76b7b40520108f677c21b79" resname="Jour de la visite">
+        <source>Jour de la visite</source>
+        <target>Day of the visit</target>
+      </trans-unit>
+      <trans-unit id="53eadfce5bf755fe7c4f0a1cdb615903" resname="Type de billets">
+        <source>Type de billets</source>
+        <target>Ticket type</target>
+      </trans-unit>
+      <trans-unit id="66c86313683c9af211ee26b02c0b551b" resname="Journée">
+        <source>Journée</source>
+        <target>Day</target>
+      </trans-unit>
+      <trans-unit id="03f7b69aa9cc646acc9b8ba9a7a11d99" resname="Demi-journée">
+        <source>Demi-journée</source>
+        <target>Half-day</target>
+      </trans-unit>
+      <trans-unit id="52cce2d3fea3ecaa0f126f7fc8273e18" resname="Tarif réduit">
+        <source>Tarif réduit</source>
+        <target>Reduced price</target>
+      </trans-unit>
+      <trans-unit id="7d54c1ad768ecf52c3e3b3101434de2e" resname="Quantité de billets">
+        <source>Quantité de billets</source>
+        <target>Tickets quantities</target>
+      </trans-unit>
+      <trans-unit id="a85d715393653bbe466e98039549e75b" resname="Billeterie du Louvre">
+        <source>Billeterie du Louvre</source>
+        <target>Louvre Ticketing Service</target>
+      </trans-unit>
+      <trans-unit id="b635b6dd13bc3bfe6383c7a9880e45e1" resname="Billeterie non officielle">
+        <source>Billeterie non officielle</source>
+        <target>Non official ticketing service</target>
+      </trans-unit>
+      <trans-unit id="d4700b697a54fbd43a1a613d32694e7f" resname="Nom">
+        <source>Nom</source>
+        <target>Lastname</target>
+      </trans-unit>
+      <trans-unit id="aee37c30f5d091a495526f636a3527bb" resname="nom">
+        <source>nom</source>
+        <target>lastname</target>
+      </trans-unit>
+      <trans-unit id="c552303ac51493dced6bc2b204818fac" resname="Nous contacter">
+        <source>Nous contacter</source>
+        <target>Contact us</target>
+      </trans-unit>
+      <trans-unit id="5170cdcaa969d7cb343ed9a6c4a08ddc" resname="Traduction">
+        <source>Traduction</source>
+        <target>Translate</target>
+      </trans-unit>
+      <trans-unit id="ee85e4266c7b5041584091e6ef402ca0" resname="Accès &amp; Infos pratiques">
+        <source>Accès &amp; Infos pratiques</source>
+        <target>Practical informations</target>
+      </trans-unit>
+      <trans-unit id="a6fcb4e4575f349e7eb05b7063d868fe" resname="Conditions générales de ventes">
+        <source>Conditions générales de ventes</source>
+        <target>Selling policies</target>
+      </trans-unit>
+      <trans-unit id="e6d1346236220ef3f05bd461776f89c8" resname="Achat de billet en ligne">
+        <source>Achat de billet en ligne</source>
+        <target>Online booking</target>
+      </trans-unit>
+      <trans-unit id="c66ee86eeac21c5b9c11ed0222d0221f" resname="Horaires d'ouverture">
+        <source>Horaires d'ouverture</source>
+        <target>Opening hours</target>
+      </trans-unit>
+      <trans-unit id="58f107defca8a509b5c3f45308f37b8e" resname="Le musée est fermé le :">
+        <source>Le musée est fermé le :</source>
+        <target>The museum is closed :</target>
+      </trans-unit>
+      <trans-unit id="a06ab07d6493e3ebf6d22cd87acc877a" resname="mardi">
+        <source>mardi</source>
+        <target>tuesday</target>
+      </trans-unit>
+      <trans-unit id="1f0da829aa7aa817dd63b6a8fd6adad7" resname="1er mai">
+        <source>1er mai</source>
+        <target>1st of may</target>
+      </trans-unit>
+      <trans-unit id="b19d84b604d1749549a7f501e5bc07fb" resname="1er novembre">
+        <source>1er novembre</source>
+        <target>1st of november</target>
+      </trans-unit>
+      <trans-unit id="62cac6b19550858d602ed59eeb6d6e65" resname="25 décembre">
+        <source>25 décembre</source>
+        <target>december 25</target>
+      </trans-unit>
+      <trans-unit id="272dac251f1643631603f81223fc0c41" resname="Tarifs">
+        <source>Tarifs</source>
+        <target>Fares</target>
+      </trans-unit>
+      <trans-unit id="5fc5020b7e67041b4d807e1ecd1e80d9" resname="Plan d'accès">
+        <source>Plan d'accès</source>
+        <target>Map</target>
+      </trans-unit>
+      <trans-unit id="1a8df62a789b4884e985ba725be3251d" resname="Adresse :">
+        <source>Adresse :</source>
+        <target>Adress :</target>
+      </trans-unit>
+      <trans-unit id="f0182f9556bb90f8844756e14a8edf4f" resname="Moyen d'accès">
+        <source>Moyen d'accès</source>
+        <target>Means of public access </target>
+      </trans-unit>
+      <trans-unit id="09c26047ea55a7ad44b30a5ab8e29a95" resname="En métro">
+        <source>En métro</source>
+        <target>By subway</target>
+      </trans-unit>
+      <trans-unit id="267416848c7102b21bfb7842175bdcfb" resname="En bus">
+        <source>En bus</source>
+        <target>By bus</target>
+      </trans-unit>
+      <trans-unit id="a258dbcbc71d34917e946628c804e31a" resname="Paris l'Open Tour">
+        <source>Paris l'Open Tour</source>
+        <target>By Paris Open Tour</target>
+      </trans-unit>
+      <trans-unit id="9b905cb1e7b552a5856af9c9076ad517" resname="En voiture">
+        <source>En voiture</source>
+        <target>By car</target>
+      </trans-unit>
+      <trans-unit id="78fb9c527e76ec509a6984c463a7e44f" resname="En Batobus">
+        <source>En Batobus</source>
+        <target>By Busboat</target>
+      </trans-unit>
+      <trans-unit id="efab9b1ab0d467307cc103bf5a4ff90f" resname="Depuis l'Aéroport d'Orly">
+        <source>Depuis l'Aéroport d'Orly</source>
+        <target>From Orly Airport</target>
+      </trans-unit>
+      <trans-unit id="c323f42d37db8eb885c6771c0862b93d" resname="Depuis l'Aéroport Charles de Gaulle">
+        <source>Depuis l'Aéroport Charles de Gaulle</source>
+        <target>From Charles de Gaulle Airport</target>
+      </trans-unit>
+      <trans-unit id="87cbc46bfea16d7fb824941ce702b0fd" resname="ETABLISSEMENT PUBLIC DU MUSEE DU LOUVRE">
+        <source>ETABLISSEMENT PUBLIC DU MUSEE DU LOUVRE</source>
+        <target>ETABLISSEMENT PUBLIC DU MUSEE DU LOUVRE</target>
+      </trans-unit>
+      <trans-unit id="4ef53afe2a062f5319ae36b39d1ed388" resname="Article 1 : Objet">
+        <source>Article 1 : Objet</source>
+        <target>Section 1 : Object</target>
+      </trans-unit>
+      <trans-unit id="6e04392b963725e1b08c5b31a57248ba" resname="Article 2 : Identification de l’Etablissement Public du Musée du Louvre">
+        <source>Article 2 : Identification de l’Etablissement Public du Musée du Louvre</source>
+        <target>Section 2 : Identification of Etablissement Public du Musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="f86fc1ddce7bfa83f22addcd55255201" resname="Article 3 : Information sur les billets d’entrée au Musée du Louvre">
+        <source>Article 3 : Information sur les billets d’entrée au Musée du Louvre</source>
+        <target>Section 3 : Information about ticket booking of Musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="6e59bfdb55527be7795f5cc331bd1f1a" resname="Article 4 : Modalités de commande">
+        <source>Article 4 : Modalités de commande</source>
+        <target>Section 4 : Booking terms</target>
+      </trans-unit>
+      <trans-unit id="aff36aa2c9e3da7f23182b4dba2bc05a" resname="Article 5 : Modalités de paiement">
+        <source>Article 5 : Modalités de paiement</source>
+        <target>Section 5 : Payment terms</target>
+      </trans-unit>
+      <trans-unit id="d42c418c4ac317d1dc64eaee8df0731d" resname="Article 6 : Exécution de la commande">
+        <source>Article 6 : Exécution de la commande</source>
+        <target>Section 6 : Booking ordering</target>
+      </trans-unit>
+      <trans-unit id="4672ef4ddffd4d28d8089706d4d455bd" resname="Article 7 : Demande d’annulation et de remboursement">
+        <source>Article 7 : Demande d’annulation et de remboursement</source>
+        <target>Section 7 : Refund and cancellation </target>
+      </trans-unit>
+      <trans-unit id="09f60ff3f217b3eb55c3493c2b588d01" resname="Article 8 : Modalités de retrait des billets">
+        <source>Article 8 : Modalités de retrait des billets</source>
+        <target>Section 8 : Terms of ticket pickup</target>
+      </trans-unit>
+      <trans-unit id="e9afb441ec588da87db8d6c4e5e6dc4f" resname="Article 9 : Obligations de l’acheteur">
+        <source>Article 9 : Obligations de l’acheteur</source>
+        <target>Section 9 : Customer obligations</target>
+      </trans-unit>
+      <trans-unit id="701400f23d0857ad1e75e2834c273ff7" resname="Article 10 : Responsabilité">
+        <source>Article 10 : Responsabilité</source>
+        <target>Section 10 : Liability</target>
+      </trans-unit>
+      <trans-unit id="15fa2afd71adc4c1eb46ba62a5eee83d" resname="Article 10 : Documents contractuels">
+        <source>Article 10 : Documents contractuels</source>
+        <target>Section 10 : Contractuals documents</target>
+      </trans-unit>
+      <trans-unit id="cbce554acc75477ca8f1e07fbb7feb3e" resname="Article 11 : Intégralité du contrat">
+        <source>Article 11 : Intégralité du contrat</source>
+        <target>Section 11 : Full contract</target>
+      </trans-unit>
+      <trans-unit id="87b05d4801106ed63256f826514d0d9c" resname="Article 13 : Droit applicable - règlement de litiges">
+        <source>Article 13 : Droit applicable - règlement de litiges</source>
+        <target>Section 13 : Settlement of disputes - Applicables laws</target>
+      </trans-unit>
+      <trans-unit id="4d7a5a655d04d5acc1383780dda89202" resname="Article 2 : Identification">
+        <source>Article 2 : Identification</source>
+        <target>Section 2 : Identification</target>
+      </trans-unit>
+      <trans-unit id="7bd9ca4b1c50c66ee26d0383d4f0c123" resname="Article 3 : Information sur les billets d’entrée au musée du Louvre">
+        <source>Article 3 : Information sur les billets d’entrée au musée du Louvre</source>
+        <target>Section 3 : Information about ticket booking of Musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="ddae3f4d135fe96653af57e8fd48ee63" resname="Article 11 : Documents contractuels">
+        <source>Article 11 : Documents contractuels</source>
+        <target>Section 11 : Contractuals documents</target>
+      </trans-unit>
+      <trans-unit id="a6326b4272965526f2b9b3777cf4575b" resname="Article 12 : Intégralité du contrat">
+        <source>Article 12 : Intégralité du contrat</source>
+        <target>Section 12 : Full contract</target>
+      </trans-unit>
+      <trans-unit id="8cd3a0db41d82f0d9c71f3273104e0a2" resname="Suppression de billet">
+        <source>Suppression de billet</source>
+        <target>Cancel ticket</target>
+      </trans-unit>
+      <trans-unit id="c9a3202e7234a687750cb0cd25f02879" resname="Etes vous sûr de vouloir supprimer le billet ?">
+        <source>Etes vous sûr de vouloir supprimer le billet ?</source>
+        <target>Are you sure you want to delete this ticket ?</target>
+      </trans-unit>
+      <trans-unit id="c82948ead63d3c70c7861f6c439dc82f" resname="Billet">
+        <source>Billet</source>
+        <target>Ticket</target>
+      </trans-unit>
+      <trans-unit id="70e7a23cd7b478839263ad1a67429631" resname="Coordonnées">
+        <source>Coordonnées</source>
+        <target>Contact details</target>
+      </trans-unit>
+      <trans-unit id="a7ca34bf9542bf77a680f7617779d879" resname="Reservation de billets">
+        <source>Reservation de billets</source>
+        <target>Tickets booking</target>
+      </trans-unit>
+      <trans-unit id="6ba1a61770731e42f9dd60686d92fbba" resname="Supprimer le billet">
+        <source>Supprimer le billet</source>
+        <target>Delete this ticket</target>
+      </trans-unit>
+      <trans-unit id="770a1a1e17972d73a5f39914e0d5c6b1" resname="Envoyer">
+        <source>Envoyer</source>
+        <target>Send</target>
+      </trans-unit>
+      <trans-unit id="b4c090df1fcee28debcbf08b42d29881" resname="Continuer la réservation">
+        <source>Continuer la réservation</source>
+        <target>Continue to booking</target>
+      </trans-unit>
+      <trans-unit id="f05011292e750a43d2f8c2a95f2bacd7" resname="Collections permanentes, expositions temporaires et musée Eugène Delacroix">
+        <source>Collections permanentes, expositions temporaires et musée Eugène Delacroix</source>
+        <target>Permanents collection, temporary exhibit and Eugène Delacroix museum</target>
+      </trans-unit>
+      <trans-unit id="e63629ee826612af013f282d0b5b3a46" resname="Achat de billets en ligne">
+        <source>Achat de billets en ligne</source>
+        <target>Online booking</target>
+      </trans-unit>
+      <trans-unit id="2a8ebe215f08c339dfa48ba8ae2e0018" resname="Reservez votre billet en ligne, vous receverez une confirmation par courriel.">
+        <source>Reservez votre billet en ligne, vous receverez une confirmation par courriel.</source>
+        <target>Book your ticket online, you will receive an email confirmation.</target>
+      </trans-unit>
+      <trans-unit id="b8ceb2bcb1dbee3ff2812398de997408" resname="Ce billet vous permet de couper la file classique.">
+        <source>Ce billet vous permet de couper la file classique.</source>
+        <target>No more queuing with this ticket.</target>
+      </trans-unit>
+      <trans-unit id="a2c1e786119b8eb12ec5acd1a82a3e41" resname="Vous pouvez présenter une impression du billet ou bien présenter le courriel">
+        <source>Vous pouvez présenter une impression du billet ou bien présenter le courriel</source>
+        <target>You can show a print copy of the ticket or show the email trough your smartphone</target>
+      </trans-unit>
+      <trans-unit id="a18a5d64337132bad4df11351651ad09" resname="du billet aux guichets">
+        <source>du billet aux guichets</source>
+        <target>at the counter</target>
+      </trans-unit>
+      <trans-unit id="b57804e7ee1aae1c783f8569f808fc09" resname="« normal » à partir de 12 ans à 16 €">
+        <source>« normal » à partir de 12 ans à 16 €</source>
+        <target>« regular » from 12 yo, 16 €</target>
+      </trans-unit>
+      <trans-unit id="97cf921dfae9ebee1353d1e3335681b0" resname="« enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)">
+        <source>« enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)</source>
+        <target>« child » from 4 yo till 12 yo, 8 € ( free entrance for child under 4 yo)</target>
+      </trans-unit>
+      <trans-unit id="717471a127d0327e81e1109c84aba6a6" resname="« senior » à partir de 60 ans pour 12  €">
+        <source>« senior » à partir de 60 ans pour 12  €</source>
+        <target>« senior » from 60 yo, 12  €</target>
+      </trans-unit>
+      <trans-unit id="6c550ad0c8ef2d0181059d721c85733c" resname="« réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…) *">
+        <source>« réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…) *</source>
+        <target>« reduced » 10 € granted under certain conditions (student, museum employe, employe of Ministère de la Culture, military…) *</target>
+      </trans-unit>
+      <trans-unit id="00aae950b519594ae108bac832fea0e0" resname="En cas de tarif réduit une preuve vous sera demandée ( carte d'étudiant, badge d' employé du musée,">
+        <source>En cas de tarif réduit une preuve vous sera demandée ( carte d'étudiant, badge d' employé du musée,</source>
+        <target>In case of reduced price, a proof will be asked ( studend card, employe credential,</target>
+      </trans-unit>
+      <trans-unit id="44f431c33bcdde11020208da436b641e" resname="badge du ministère de la culture, carte de circulation militaire)">
+        <source>badge du ministère de la culture, carte de circulation militaire)</source>
+        <target>credential of ministère de la culture, military card)</target>
+      </trans-unit>
+      <trans-unit id="9dbf2d09c80dc9da8992f9b3513b586d" resname="Situé dans le premier arrondissement de Paris">
+        <source>Situé dans le premier arrondissement de Paris</source>
+        <target>Located in the first district of Paris</target>
+      </trans-unit>
+      <trans-unit id="0cd4e75341a88e0884ce9795be5dafb7" resname="Entrée au niveau de la pyramide">
+        <source>Entrée au niveau de la pyramide</source>
+        <target>Entrance at the pyramid base</target>
+      </trans-unit>
+      <trans-unit id="15b47609457e40614c8f7899be7b127a" resname="lignes 1 station Palais-Royal/musée du Louvre">
+        <source>lignes 1 station Palais-Royal/musée du Louvre</source>
+        <target>line 1 station Palais-Royal/musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="0bdbefddf459d8291d0c8949c98a6b42" resname="arrêt face à la pyramide">
+        <source>arrêt face à la pyramide</source>
+        <target>stop in front of the pyramid</target>
+      </trans-unit>
+      <trans-unit id="4c25a8f63ac98050c3915e2eed2a03ab" resname="Stations Velib à proximité du musée">
+        <source>Stations Velib à proximité du musée</source>
+        <target>Velib bike station close to the museum</target>
+      </trans-unit>
+      <trans-unit id="15daddcbf301aa0865d2d8840e57974c" resname="un parc de stationnement souterrain est accessible par l'avenue du général Lemonier, tous les jours de 7h00 à 23h00">
+        <source>un parc de stationnement souterrain est accessible par l'avenue du général Lemonier, tous les jours de 7h00 à 23h00</source>
+        <target>Entrance of underground car park located at the avenue du général Lemonier, everyday from 7h00 till 23h00</target>
+      </trans-unit>
+      <trans-unit id="6a746597a00648ec961b8c1e2f7891b9" resname="Escale Louvre, quai François Mitterrand">
+        <source>Escale Louvre, quai François Mitterrand</source>
+        <target>Call in at Louvre, platform François Mitterrand</target>
+      </trans-unit>
+      <trans-unit id="2a7c035df1b3242fc78552cd79dd2d25" resname="direction Champs de Mars-Tour Eiffel, descendre à Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare, descendre à Musée du Louvre, en face de la Pyramide">
+        <source>direction Champs de Mars-Tour Eiffel, descendre à Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare, descendre à Musée du Louvre, en face de la Pyramide</source>
+        <target>heading to Champs de Mars-Tour Eiffel, get out at Saint-Michel Notre-Dame, walk until at Saint Michel, take the bus 27 heading Saint Lazare, get out at Musée du Louvre, in front of Pyramid</target>
+      </trans-unit>
+      <trans-unit id="666c7dc63bb8ba7dcaf6b9dee516b907" resname="direction Massy-Palaiseau, changer à Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre">
+        <source>direction Massy-Palaiseau, changer à Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre</source>
+        <target>heading to Massy-Palaiseau, change at Chatelet les Halles, take the line 14 heading Saint-Lazare, get out at Pyramides walk till at the musée du Louvre or take the line 1 and get out at Palais-Royal / Musée du Louvre</target>
+      </trans-unit>
+      <trans-unit id="8a9824b881715f14e4433e189b43574f" resname="Tous les champs sont obligatoires">
+        <source>Tous les champs sont obligatoires</source>
+        <target>All the field are required</target>
+      </trans-unit>
+      <trans-unit id="b2949bc7591c5c75873f531fc04284fb" resname="En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,&#10;        plus de détails dans la section Accès et infos pratiques">
+        <source>En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+        plus de détails dans la section Accès et infos pratiques</source>
+        <target>In case of reduced or special fare, a proof will be asked. More details in practical informations</target>
+      </trans-unit>
+      <trans-unit id="7241255f001616f5bd8e87598074fe4a" resname="&quot;Supprimer le billet&quot;">
+        <source>"Supprimer le billet"</source>
+        <target>"Delete the ticket"</target>
+      </trans-unit>
+      <trans-unit id="4864c339e46b792a625be80bf8a52a64" resname="&quot;Annuler&quot;">
+        <source>"Annuler"</source>
+        <target>"Cancel"</target>
+      </trans-unit>
+       <trans-unit id="date.form" resname="dateform">
+        <source>'dd/MM/yyyy'</source>
+        <target>'MM/dd/yyyy'</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

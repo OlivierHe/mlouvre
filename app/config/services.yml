@@ -10,3 +10,11 @@ services:
     app.mailer:
        class: AppBundle\Services\Mailer
        arguments: ["@mailer","@twig"]
+    app.locale_listener:
+        class: AppBundle\EventListener\LocaleListener
+        arguments: ['%kernel.default_locale%']
+        tags:
+            - { name: kernel.event_subscriber }
+    app.persistresa :
+        class: AppBundle\Services\PersistResa
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", "@session", "@router"]

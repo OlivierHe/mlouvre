@@ -11,15 +11,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+
 class MainController extends Controller
 {
     /**
-     * @Route("/", name="accueil")
+     * @Route("/{_locale}", name="accueil", defaults={"_locale": "fr"}, requirements={
+     *     "_locale": "en|fr"
+     * })
      */
-    public function accueilAction()
+    public function accueilAction(Request $request,$_locale)
     {
-        //$session = new Session();
-     
+        $request->getSession()->set('_locale', $_locale);
+
         return $this->render('child/accueil.html.twig');
     }
 
@@ -53,33 +56,20 @@ class MainController extends Controller
      */
      public function resaAction(Request $request)
      {
-        $moreResa = new MoreResa();
-        // mettre condition si qty n'existe pas'
-        $qty = $request->getSession()->get('quantite_ticket');
+        $form = $this->get('app.persistresa')->getForm($request);
 
-         for ($i = 1; $i <= $qty; $i++) {
-            ${'resa' . $i} = new Resa();
-            $moreResa->getResas()->add(${'resa' . $i});
-        }
-        
-        
-
-        $form = $this->createForm(MoreResaType::class, $moreResa, array('attr' => array('class' => 'form-horizontal')));
-
-        if ($request->isMethod('POST')) {
-            // Refill the fields in case the form is not valid.
-            $form->handleRequest($request);
-
-            if($form->isValid()){
-                $data = $form->getData();
-            var_dump($data['tarif_reduit']);
-            }
-        }
-
-
-          return $this->render('child/moreresa.html.twig', array(
+        return $this->render('child/moreresa.html.twig', array(
             'form' => $form->createView()
         ));
+     }
+
+
+     /**
+     * @Route("/succesresa", name="succesresa")
+     */
+     public function succesResaAction()
+     {
+        return $this->render('child/succesresa.html.twig');
      }
 
      /**

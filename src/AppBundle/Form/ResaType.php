@@ -18,8 +18,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ResaType extends AbstractType 
 {
+
+
      public function buildForm(FormBuilderInterface $builder, array $options) 
      {
+
         $builder
         	->add('nom', 			TextType::class, 
                 array('attr'=> array('class'=>'form-control')
@@ -34,11 +37,13 @@ class ResaType extends AbstractType
                 ))
             ->add('date_naissance', BirthdayType::class, 
                 array('attr'=> array('class'=>'form-control date_naissance', 'placeholder' => 'Cliquez ici'), 'label' => 'Date de naissance',
-                                    'widget' => 'single_text', 'html5' => false 
+                                    'widget' => 'single_text', 'html5' => false,
+                                    'format' => 'dd/MM/yyyy' 
                 ))
             ->add('jour_visite',    DateType::class, 
                 array('attr'=> array('class'=>'form-control jour_visite', 'placeholder' => 'Cliquez ici'),'label' => 'Jour de la visite',
-                                     'widget' => 'single_text', 'html5' => false                
+                                     'widget' => 'single_text', 'html5' => false,
+                                     'format' => 'dd/MM/yyyy'               
                 ))
             ->add('type_billets',   ChoiceType::class, 
                 array('attr'=> array('class'=>'form-control'), 'label' => 'Type de billets',
@@ -50,10 +55,13 @@ class ResaType extends AbstractType
         ;
      }
 
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => Resa::class,
+            'data_class' => Resa::class
         ));
+
+
     }
 }

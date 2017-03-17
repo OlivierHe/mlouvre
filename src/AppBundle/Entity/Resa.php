@@ -60,7 +60,7 @@ class Resa
     protected $pays;
 
     /**
-    * @ORM\Column(type="string")
+    * @ORM\Column(type="date")
     * @Assert\Date()
     * @Assert\NotBlank(message="Vous devez selectionner une date")
     */
@@ -80,15 +80,15 @@ class Resa
     */
     protected $type_billets;
 
-    // /**
-    // * @ORM\Column(type="string")
-    // */	
-    // protected $_token;
-
     /**
     * @ORM\Column(type="boolean")
     */
     protected $tarif_reduit;
+
+    /**
+    * @ORM\Column(type="integer")
+    */
+    protected $prix_tickets;
 
     /**
      * Get id
@@ -290,5 +290,29 @@ class Resa
     public function getTarifReduit()
     {
         return $this->tarif_reduit;
+    }
+
+    /**
+     * Set prixTickets
+     *
+     * @param integer $prixTickets
+     *
+     * @return Resa
+     */
+    public function setPrixTickets($prixTickets)
+    {
+        $this->prix_tickets = $prixTickets;
+
+        return $this;
+    }
+
+    /**
+     * Get prixTickets
+     *
+     * @return integer
+     */
+    public function getPrixTickets()
+    {
+        return $this->prix_tickets;
     }
 }

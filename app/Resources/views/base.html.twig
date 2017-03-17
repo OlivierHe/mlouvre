@@ -191,17 +191,17 @@
 	<div class="container">
 		<div id="content">
 			<header class="jumbotron jumbotron-fluid">
-			<h1>Billeterie du Louvre</h1>
-			<br><em>Billeterie non officielle</em>
+			<h1>{{ "Billeterie du Louvre" | trans }}</h1>
+			<br><em>{{ "Billeterie non officielle" | trans }}</em>
 			</header>
 
 			<nav class="navbar navbar-inverse">
                 <div class="container-fluid">
-                     <a class="navbar-brand" href="#page-top">English</a>
+                     <a class="navbar-brand" href="{{ path('accueil', {'_locale': 'en'}) }}">English</a>
                      <div class="navbar-brand">
                      	<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                      </div>
-                     <a class="navbar-brand" href="#page-top">Français</a>
+                     <a class="navbar-brand" href="{{ path('accueil', {'_locale': 'fr'}) }}">Français</a>
                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -211,19 +211,16 @@
                     <div id="navbar" class="collapse navbar-collapse pull-right">
                         <ul class="nav navbar-nav">
                             <!--<li class="hidden"><a href="#page-top"></a></li>-->
-                            <li><a href="acces_infos_pratiques">Accès & Infos pratiques</a></li>
-                            <li><a href="nous_contacter">Nous contacter</a></li>
+                            <li><a href="acces_infos_pratiques">{{ "Accès & Infos pratiques" | trans }}</a></li>
+                            <li><a href="nous_contacter">{{ "Nous contacter" | trans }}</a></li>
                         </ul>
                     </div>
                 </div>  <!-- fin div container -->
             </nav>
-            <!-- breadcrumb a modder -->
-	        <div class="btn-group btn-breadcrumb">
-	            <a href="/" class="btn btn-default"><i class="glyphicon glyphicon-home">&nbsp;Accueil</i></a>
-	            <a href="#" class="btn btn-default">Snippets</a>
-	            <a href="#" class="btn btn-default">Breadcrumbs</a>
-	        </div>
-			
+
+            {% block breadcrumb %}
+			{% endblock %}
+
 		    <section>
             {% block section %}
             {% endblock %}
@@ -232,7 +229,7 @@
 		    <footer>
 			    <nav class="navbar navbar-inverse">
 	                <div class="container-fluid">
-	                     <a class="navbar-brand" href="cgv">Conditions générales de ventes</a>
+	                     <a class="navbar-brand" href="cgv">{{ "Conditions générales de ventes" | trans }}</a>
 	                </div>
 	            </nav>
 		    </footer>

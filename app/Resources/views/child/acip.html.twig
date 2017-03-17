@@ -1,60 +1,70 @@
 {# app/Resources/views/child/acip.html.twig #}
 {% extends 'base.html.twig' %}
 
+{% block breadcrumb %}
+ <div class="btn-group btn-breadcrumb">
+    <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
+    <a href="/acces_infos_pratiques" class="btn btn-default">{{ "Accès & Infos pratiques" | trans }}</a>
+</div>
+{% endblock %}
+
 {% block section %}
 	<div id="cgv">
-		<div class="articles">Horaires d'ouverture</div>
+		<div class="articles">
+		{{ "Horaires d'ouverture" | trans}}
+		</div>
 		<p>
-		Le musée est fermé le :
+		{{ "Le musée est fermé le :" | trans}}
 		<br>
 		<ul>
-			<li>mardi</li>
-			<li>1er mai</li>
-			<li>1er novembre </li>
-			<li>25 décembre</li>
+			<li>{{ "mardi" | trans}}</li>
+			<li>{{ "1er mai" | trans}}</li>
+			<li>{{ "1er novembre " | trans}}</li>
+			<li>{{ "25 décembre" | trans}}</li>
 		</ul>
 		</p>
-		<div class="articles">Tarifs</div>
+		<div class="articles">{{ "Tarifs" | trans}}</div>
 		<p>
 		<ul>
-			<li>« normal » à partir de 12 ans à 16 €</li>
-			<li>« enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)</li>
-			<li>« senior » à partir de 60 ans pour 12  €</li>
-			<li>« réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…) *</li>
+			<li>{{ "« normal » à partir de 12 ans à 16 €" | trans}}</li>
+			<li>{{ "« enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)" | trans}}</li>
+			<li>{{ "« senior » à partir de 60 ans pour 12  €" | trans}}</li>
+			<li>{{ "« réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…) *" | trans}}</li>
 		</ul>
 		</p>
 		<p>
-			En cas de tarif réduit une preuve vous sera demandée ( carte d'étudiant, badge d' employé du musée,<br>
-			badge du ministère de la culture, carte de circulation militaire).
+			{{ "En cas de tarif réduit une preuve vous sera demandée ( carte d'étudiant, badge d' employé du musée," | trans}}<br>
+			{{ "badge du ministère de la culture, carte de circulation militaire)" | trans}}.
 		</p>
-		<div class="articles">Plan d'accès</div>
+		<div class="articles">{{ "Plan d'accès" | trans}}</div>
 		<p>
-		Adresse :<br><br>
-		Situé dans le premier arrondissement de Paris<br>
-		Entrée au niveau de la pyramide
+		{{ "Adresse :" | trans}}<br><br>
+		{{ "Situé dans le premier arrondissement de Paris" | trans}}<br>
+		{{ "Entrée au niveau de la pyramide" | trans}}
 		<div id="map"></div>
 		</p>
-		<div class="articles">Moyen d'accès</div>
+		<div class="articles">{{ "Moyen d'accès" | trans}}</div>
 		<p>
-		<b>En métro</b> : lignes 1 station Palais-Royal/musée du Louvre<br><br>
+		<b>{{ "En métro" | trans}}</b> : {{ "lignes 1 station Palais-Royal/musée du Louvre" | trans}}<br><br>
 
 
-		<b>En bus</b> : bus n° 21,24,27,39,48,68,69,72,81,95<br>
-		<b>Paris l'Open Tour</b> : arrêt face à la pyramide<br><br>
+		<b>{{ "En bus" | trans}}</b> : bus n° 21,24,27,39,48,68,69,72,81,95<br>
+		<b>{{ "Paris l'Open Tour" | trans}}</b> : {{ "arrêt face à la pyramide" | trans}}<br><br>
 
-		<b>Stations Velib à proximité du musée</b> :<br>
+		<b>{{ "Stations Velib à proximité du musée" | trans}}</b> :<br>
 		n°1015 : 2 place A. Malraux<br>
 		n°1023 : 165 rue Saint-Honoré<br>
 		n°1014 : 5 rue de l’Echelle<br>
 		n°1013 : 186 rue Saint-Honoré<br><br>
 
-		<b>En voiture</b> : un parc de stationnement souterrain est accessible par l'avenue du général Lemonier, tous les jours de 7h00 à 23h00.<br><br>
+		<b>{{ "En voiture" | trans}}</b> : {{ "un parc de stationnement souterrain est accessible par l'avenue du général Lemonier, tous les jours de 7h00 à 23h00" | trans}}.<br><br>
 
-		<b>En Batobus</b> : Escale Louvre, quai François Mitterrand<br><br>
+		<b>{{ "En Batobus" | trans}}</b> : {{ "Escale Louvre, quai François Mitterrand" | trans}}<br><br>
 
-		<b>Depuis l'Aéroport d'Orly</b> : RER C direction Champs de Mars-Tour Eiffel, descendre à Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare, descendre à Musée du Louvre, en face de la Pyramide.<br><br>
+		<b>{{ "Depuis l'Aéroport d'Orly" | trans}}</b> : RER C {{ "direction Champs de Mars-Tour Eiffel, descendre à Saint-Michel Notre-Dame, marcher jusqu'à Saint Michel, prendre le bus 27 direction Saint Lazare, descendre à Musée du Louvre, en face de la Pyramide" | trans}}.<br><br>
 
-		<b>Depuis l'Aéroport Charles de Gaulle</b> : RER B direction Massy-Palaiseau, changer à Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre.
+		<b>{{ "Depuis l'Aéroport Charles de Gaulle" | trans}}</b> : RER B {{ "direction Massy-Palaiseau, changer à Chatelet les Halles, prendre la ligne 14 direction Saint-Lazare, descendre à Pyramides et marcher jusqu'au musée du Louvre ou bien prendre la ligne 1 et descendre à Palais-Royal / Musée du Louvre" | trans}}.
 		</p>
 		<!--    fin de section -->
 	</div>
