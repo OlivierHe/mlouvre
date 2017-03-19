@@ -47,7 +47,7 @@ class ResaType extends AbstractType
                 ))
             ->add('type_billets',   ChoiceType::class, 
                 array('attr'=> array('class'=>'form-control'), 'label' => 'Type de billets',
-                'choices' => array('Journée' => 'Journée', 'Demi-journée' => 'Demi-journée')
+                'choices' => $this->getChoice()
                 ))
             ->add('tarif_reduit', 	CheckboxType::class, 
                 array('attr'=> array('class'=>'form-control'),'label' => 'Tarif réduit',  'required' => false
@@ -55,6 +55,17 @@ class ResaType extends AbstractType
         ;
      }
 
+    private function getChoice()
+    {
+        date_default_timezone_set("Europe/Paris");
+        if ((date("H:i")) >= "14:00") {
+            $typeBillets = array ('Demi-journée' => 'Demi-journée');
+            return $typeBillets;
+        } else {
+            $typeBillets = array('Journée' => 'Journée', 'Demi-journée' => 'Demi-journée');
+            return $typeBillets;
+        }
+    }
 
     public function configureOptions(OptionsResolver $resolver)
     {

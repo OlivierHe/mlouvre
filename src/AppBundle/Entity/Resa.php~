@@ -291,28 +291,5 @@ class Resa
     {
         return $this->tarif_reduit;
     }
-
-    /**
-     * Set prixTicket
-     *
-     * @param integer $prixTicket
-     *
-     * @return Resa
-     */
-    public function setPrixTicket($prixTicket)
-    {
-        $this->prix_ticket = $prixTicket;
-
-        return $this;
-    }
-
-    /**
-     * Get prixTicket
-     *
-     * @return integer
-     */
-    public function getPrixTicket()
-    {
-        return $this->prix_ticket;
-    }
 }
+
