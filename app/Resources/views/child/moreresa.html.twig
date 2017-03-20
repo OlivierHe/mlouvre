@@ -12,6 +12,9 @@
       <script>
 
          $(document).ready(function() {
+
+            // partie calendrier et control
+
              $.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
                 closeText: 'Fermer', closeStatus: 'Fermer sans modifier',
                 prevText: '&lt;Préc', prevStatus: 'Voir le mois précédent',
@@ -33,12 +36,57 @@
             $.datepicker.regional['en'] = {dateFormat: 'dd/mm/yy'};
 
             $.datepicker.setDefaults( $.datepicker.regional[ "{{ app.request.locale }}" ] );
-            $('.date_naissance').datepicker(
-                 );
+            $('.date_naissance').datepicker();
+
+            var array = ["01/01","01/05","08/08","14/07","15/08","01/11","11/11","25/12"];
+
+            function closedDay(date){
+                    var day = date.getDay();
+                    var string = jQuery.datepicker.formatDate('dd/mm', date);
+                    return [ array.indexOf(string) == -1 && day != 2 && day != 0 ];
+            }
+
+            $( ".jour_visite" ).focusin(function() {
+               $(this).prop('readonly', true);
+            });
+
+            $( ".jour_visite" ).focusout(function() {
+               $(this).prop('readonly', false);
+            });
+      
             $('.jour_visite').datepicker({
-                minDate:0
-                });
+                minDate:0,
+                beforeShowDay: closedDay,
+                onSelect: function() {
+                    $idJour = this.id;
+                    var idType = $idJour.replace("jour_visite", "type_billets");
+                    var option = $('<option></option>').attr("value", "Demi-journée").text("Demi-journée");
+                    var option2 = $('<option></option>').attr("value", "Journée").text("Journée");
+                    if ("{{ "now"|date("d/m/Y") }}" == this.value) {
+                        if({{ "now"|date("Hi") }} >= 1400) {
+                            alert("Seul le billet demi journée est disponible, pour une réservation après 14 heures le jour même"); 
+                            $("#"+ idType).empty().append(option); 
+                        }    
+                    } else {
+                        $("#"+ idType).empty().append(option2);
+                        $("#"+ idType).append(option);  
+                    }    
+                }   
+            });
             
+            // modal delete et control
+            var bLength;
+
+            disableDelete();
+
+            function disableDelete() {
+                var bLength = $(":button[id='del']").length;
+                if (bLength == 1) {
+                    $("#del").attr('disabled',true);
+               }
+            }
+           
+
             $( "button, input[type='button']" ).click(function() {
                 $( "#dialog-confirm" ).data('id', this.name);
                 $( "#dialog-confirm" ).dialog({
@@ -50,7 +98,8 @@
                         {% trans %}"Supprimer le billet"{% endtrans %} : function() {
                             var id = $( "#dialog-confirm" ).data('id');
                             $('#' + id).slideUp( "slow", function() {
-                                $('#' + id).remove();   
+                                $('#' + id).remove();
+                                disableDelete();   
                             })
                             $( this ).dialog( "close" );
                         },
@@ -101,7 +150,7 @@
         {{ form_row(resa.jour_visite) }}
         {{ form_row(resa.type_billets) }}
         {{ form_row(resa.tarif_reduit) }}
-        <input type="button" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="{{ "Supprimer le billet" | trans}}"/>
+        <input type="button" id="del" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="{{ "Supprimer le billet" | trans}}"/>
     </div>
 {% endfor %}
 

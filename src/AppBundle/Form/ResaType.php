@@ -15,15 +15,16 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 
 class ResaType extends AbstractType 
 {
 
-
      public function buildForm(FormBuilderInterface $builder, array $options) 
      {
-
-        $builder
+    
+       $builder
         	->add('nom', 			TextType::class, 
                 array('attr'=> array('class'=>'form-control')
                 ))
@@ -47,18 +48,23 @@ class ResaType extends AbstractType
                 ))
             ->add('type_billets',   ChoiceType::class, 
                 array('attr'=> array('class'=>'form-control'), 'label' => 'Type de billets',
-                'choices' => $this->getChoice()
+                'choices' => array('Journée' => 'Journée', 'Demi-journée' => 'Demi-journée')
                 ))
             ->add('tarif_reduit', 	CheckboxType::class, 
                 array('attr'=> array('class'=>'form-control'),'label' => 'Tarif réduit',  'required' => false
                 ))
         ;
-     }
 
-    private function getChoice()
+   }
+
+    private function getChoice($jourVisite)
     {
         date_default_timezone_set("Europe/Paris");
-        if ((date("H:i")) >= "14:00") {
+        $dateToday = new \DateTime("now");
+        // var_dump($dateToday->format('Y-m-d'));
+        //var_dump($jourVisite);
+
+        if ((date("H:i")) >= "13:00" AND $dateToday == $jourVisite) {
             $typeBillets = array ('Demi-journée' => 'Demi-journée');
             return $typeBillets;
         } else {
