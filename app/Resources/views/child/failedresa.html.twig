@@ -1,0 +1,17 @@
+{# app/Resources/views/child/failedresa.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb">
+  <li class="active"> <a href="/{{ app.request.locale }}" class="btn btn-default">
+    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a></li>
+</ol>
+{% endblock %}
+
+{% block section %}
+	<div id="cgv">
+		Un problème c'est produit lors de votre tentative de reservation.</br>
+		Veuillez utiliser le boutton accueil et recommencer la procédure. 
+	</div>
+{% endblock %}
+

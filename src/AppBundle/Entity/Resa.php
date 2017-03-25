@@ -91,6 +91,11 @@ class Resa
     protected $prix_ticket;
 
     /**
+    * @ORM\Column(type="string", length=32)
+    */
+    protected $resa_number;
+
+    /**
      * Get id
      *
      * @return integer
@@ -314,5 +319,31 @@ class Resa
     public function getPrixTicket()
     {
         return $this->prix_ticket;
+    }
+
+    /**
+     * Set resaNumber
+     *
+     * @param string $resaNumber
+     *
+     * @return Resa
+     */
+    public function setResaNumber()
+    {
+        $cryptoken = openssl_random_pseudo_bytes(32);
+        $resaNumber   = bin2hex($cryptoken);
+        $this->resa_number = $resaNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get resaNumber
+     *
+     * @return string
+     */
+    public function getResaNumber()
+    {
+        return $this->resa_number;
     }
 }

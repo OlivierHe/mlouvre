@@ -1,7 +1,6 @@
-{# src/OC/PlatformBundle/Resources/views/Advert/traduction.html.twig #}
-
-<html>
-  <body>
+{# app/Resources/views/child/traduction.html.twig #}
+{% extends 'base.html.twig' %}
+{% block section %}
+  <img src="{{ qrcode_url('c1b825207a12c2c09f88b42817120871176e6bc320cc0e5b32585677862ecb78aef30732a2b8f297b7f36a9255d737186a340bfe4bec948b3d7668f9fb1330ba') }}" />
     bonjour {{ "nom" |trans}} ou  {{'Nom' |trans }}  !
-  </body>
-</html>
+{% endblock %}

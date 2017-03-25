@@ -27,50 +27,13 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/quantite_ticket", name="quantite_ticket")
+     * @Route("/tr", name="tr")
      */
-     public function qtyTicketAction(Request $request)
-     {
-        $form = $this->createForm('AppBundle\Form\QtyType',null,array('attr' => array('class' => 'form-horizontal')));
+    public function trAction()
+    {
 
-        if ($request->isMethod('POST')) {
-            // Refill the fields in case the form is not valid.
-            $form->handleRequest($request);
-
-            if($form->isValid()){
-
-                $data = $form->getData();
-                // sauvegarde la quantité de tickets
-                $request->getSession()->set('quantite_ticket', $data['quantite']);  
-                return $this->redirectToRoute('resa');
-            }
-        }
-
-        return $this->render('child/qty_ticket.html.twig', array(
-            'form' => $form->createView()
-        ));    
-     }
-
-    /**
-     * @Route("/reservation", name="resa")
-     */
-     public function resaAction(Request $request)
-     {
-        $form = $this->get('app.persistresa')->getForm($request);
-
-        return $this->render('child/moreresa.html.twig', array(
-            'form' => $form->createView()
-        ));
-     }
-
-
-     /**
-     * @Route("/succesresa", name="succesresa")
-     */
-     public function succesResaAction()
-     {
-        return $this->render('child/succesresa.html.twig');
-     }
+        return $this->render('child/traduction.html.twig');
+    }
 
      /**
      * @Route("/cgv", name="cgv")

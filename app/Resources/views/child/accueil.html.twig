@@ -2,10 +2,10 @@
 {% extends 'base.html.twig' %}
 
 {% block breadcrumb %}
- <div class="btn-group btn-breadcrumb">
-    <a href="/{{ app.request.locale }}" class="btn btn-default">
-    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
-</div>
+<ol class="breadcrumb">
+  <li class="active"> <a href="/{{ app.request.locale }}">
+    <i class="glyphicon glyphicon-home"></i>&nbsp;{{ "Accueil" | trans}}</a></li>
+</ol>
 {% endblock %}
 
 {% block section %}

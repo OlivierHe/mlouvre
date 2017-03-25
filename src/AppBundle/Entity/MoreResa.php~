@@ -78,4 +78,28 @@ class MoreResa
     {
         return $this->id;
     }
+
+    /**
+     * Set prixTotal
+     *
+     * @param integer $prixTotal
+     *
+     * @return MoreResa
+     */
+    public function setPrixTotal($prixTotal)
+    {
+        $this->prix_total = $prixTotal;
+
+        return $this;
+    }
+
+    /**
+     * Get prixTotal
+     *
+     * @return integer
+     */
+    public function getPrixTotal()
+    {
+        return $this->prix_total;
+    }
 }

@@ -119,14 +119,24 @@
 {% endblock %}
 
 {% block breadcrumb %}
- <div class="btn-group btn-breadcrumb">
-    <a href="/{{ app.request.locale }}" class="btn btn-default">
-    <i class="glyphicon glyphicon-home">&nbsp;{{ "Accueil" | trans}}</i></a>
-    <a href="/quantite_ticket" class="btn btn-default">{{ "Quantité de billets" | trans }}</a>
-</div>
+<ol class="breadcrumb">
+  <li> <a href="/{{ app.request.locale }}">
+    <i class="glyphicon glyphicon-home"></i>&nbsp;{{ "Accueil" | trans}}</a></li>
+    <li><a href="/quantite_ticket">{{ "Quantité de billets" | trans }}</a></li>
+    <li class="active"><a href="/reservation">{{ "Réservation" | trans }}</a></li>
+</ol>
+
+
 {% endblock %}
 
 {% block section %}
+    {% if app.session.flashBag.has('danger') %}
+        <div class="alert alert-danger">
+            {% for msg in app.session.flashBag.get('danger') %}
+               <b> {{ msg }} </b>
+            {% endfor %}
+        </div>
+    {% endif %}
 
 <div style="display: none;"  id="dialog-confirm" title="{{ "Suppression de billet" | trans}}">
   <p class="alert alert-danger"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>{{ "Etes vous sûr de vouloir supprimer le billet ?" | trans}}</p>

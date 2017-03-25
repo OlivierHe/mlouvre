@@ -18,3 +18,6 @@ services:
     app.persistresa :
         class: AppBundle\Services\PersistResa
         arguments: ["@doctrine.orm.entity_manager", "@form.factory", "@session", "@router"]
+    app.stripe_manager:
+       class: AppBundle\Services\StripeManager
+       arguments: ["@session","@router","@app.persistresa"]

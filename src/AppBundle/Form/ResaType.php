@@ -57,28 +57,10 @@ class ResaType extends AbstractType
 
    }
 
-    private function getChoice($jourVisite)
-    {
-        date_default_timezone_set("Europe/Paris");
-        $dateToday = new \DateTime("now");
-        // var_dump($dateToday->format('Y-m-d'));
-        //var_dump($jourVisite);
-
-        if ((date("H:i")) >= "13:00" AND $dateToday == $jourVisite) {
-            $typeBillets = array ('Demi-journée' => 'Demi-journée');
-            return $typeBillets;
-        } else {
-            $typeBillets = array('Journée' => 'Journée', 'Demi-journée' => 'Demi-journée');
-            return $typeBillets;
-        }
-    }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => Resa::class
         ));
-
-
     }
 }

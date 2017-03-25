@@ -1,0 +1,35 @@
+{# app/Resources/views/child/paiement.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+ <ol class="breadcrumb">
+  <li class="active"> <a href="/{{ app.request.locale }}">
+    <i class="glyphicon glyphicon-home"></i>&nbsp;{{ "Accueil" | trans}}</a></li>
+</ol>
+{% endblock %}
+
+{% block section %}
+{% if app.session.has('prix_total') %}
+<div id="cgv">	
+	<ul class="list-group">
+	  <li class="list-group-item list-group-item-success"><strong>Paiement</strong></li>
+	  <li class="list-group-item list-group-item-warning"><strong>Vous devez régler {{ app.session.get('prix_total') }},00  &euro; </strong></li>
+	</ul>
+        <form action="/succesresa" method="POST">
+			<script
+			  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			  data-key="pk_test_cUJD4msuljzT8GmLxfnt2jwD"
+			  data-amount="{{ app.session.get('prix_total')*100 }}"
+			  data-currency="EUR"
+			  data-name="Musée du Louvre"
+			  data-description="Reservation de tickets"
+			  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+			  data-locale="auto"
+			  data-label="Payer"
+			  data-zip-code="false">
+			</script>
+		</form>
+    {% endif %}
+</div>
+{% endblock %}
+
