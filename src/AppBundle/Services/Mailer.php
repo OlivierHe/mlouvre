@@ -14,7 +14,7 @@ class Mailer {
         $this->twig = $twig;
     }
     
-    public function send($data) {
+    public function sendDinfo($data) {
     
         $message = \Swift_Message::newInstance()
                 ->setSubject($data["titremessage"])
@@ -30,6 +30,19 @@ class Mailer {
         $this->mailer->send($message);
         
         
+    }
+
+    public function sendBillets($to){
+         $message = \Swift_Message::newInstance()
+                ->setSubject("Billets Musée du Louvre")
+                ->setFrom("billets@louvre.fr")
+                ->setTo($to)
+                ->setBody(
+                            $this->twig->render('emails/billets.html.twig'
+                            ),'text/html');
+
+        $this->mailer->send($message);
+
     }
 
 }

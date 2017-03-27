@@ -20,4 +20,4 @@ services:
         arguments: ["@doctrine.orm.entity_manager", "@form.factory", "@session", "@router"]
     app.stripe_manager:
        class: AppBundle\Services\StripeManager
-       arguments: ["@session","@router","@app.persistresa"]
+       arguments: ["@session","@router","@app.persistresa","@app.mailer"]
