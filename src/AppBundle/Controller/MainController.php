@@ -60,12 +60,13 @@ class MainController extends Controller
          $form = $this->createForm('AppBundle\Form\ContactType',null,array('attr' => array('class' => 'form-horizontal')));
 
         if ($request->isMethod('POST')) {
+            // Refill the fields in case the form is not valid.
             $form->handleRequest($request);
 
             if($form->isValid()){
                 $data = $form->getData();
                 
-                $this->get('app.mailer')->sendDinfo($data);
+                $this->get('app.mailer')->send($data);
             }
         }
 

@@ -9,5 +9,5 @@ use Symfony\Component\Validator\Constraint;
  */
 class IsValidDayDate extends Constraint
 {
-    public $message = 'La reservation à cette date est impossible';
+    public $message = 'La reservation le "%string%" est impossible';
 }

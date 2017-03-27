@@ -4,12 +4,13 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use AppBundle\Validator\Constraints as CustomAssert;
 
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="Resa")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ResaRepository")
  */
 class Resa
 {
@@ -71,6 +72,7 @@ class Resa
     * @ORM\Column(type="date")
     * @Assert\Date()
     * @Assert\NotBlank(message="Vous devez selectioner une date")
+    * @CustomAssert\IsValidDayDate
     */
     protected $jour_visite;
 

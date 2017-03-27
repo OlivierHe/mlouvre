@@ -1,6 +1,12 @@
 {# app/Resources/views/child/traduction.html.twig #}
-{% extends 'base.html.twig' %}
-{% block section %}
+{# app/Resources/views/emails/billets.html.twig #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Billets Musée du Louvre</title>
+</head>
+<body>
 {% set more_resa = app.session.get('more_resa') %}
 {% set uri = '127.0.0.1:8000/check/' %}
   {% for resa in more_resa.resas %}
@@ -29,4 +35,5 @@
 	  </tr>
 	</table>
   {% endfor %}
-{% endblock %}
+</body>
+</html>

@@ -17,7 +17,7 @@ services:
             - { name: kernel.event_subscriber }
     app.persistresa :
         class: AppBundle\Services\PersistResa
-        arguments: ["@doctrine.orm.entity_manager", "@form.factory", "@session", "@router"]
+        arguments: ["@doctrine.orm.entity_manager", "@form.factory", "@session", "@router","@app.mailer"]
     app.stripe_manager:
        class: AppBundle\Services\StripeManager
        arguments: ["@session","@router","@app.persistresa","@app.mailer"]

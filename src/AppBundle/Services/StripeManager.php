@@ -33,18 +33,25 @@ class StripeManager {
 
         // Get the credit card details submitted by the form
          if ($request->isMethod('POST')) {
+
                 try {
                     $charge = \Stripe\Charge::create(array(
                         "amount" => ($this->session->get('prix_total')*100), // Amount in cents
                         "currency" => "eur",
                         "source" => $request->request->get('stripeToken'),
-                        "description" => "Paiement Stripe - Musée du Louvre"
+                        "description" => "Paiement Stripe - OpenClassrooms Exemple"
                     ));
+                    $this->session->getFlashBag()
+                    ->add("success","Bravo ça marche !");
                     $this->mailer->sendBillets($request->request->get('stripeEmail'));
                     $this->persistresa->persistTickets();
+           //         return $this->redirectToRoute("order_prepare");
                 } catch(\Stripe\Error\Card $e) {
                     var_dump("Denied !");
+                    $this->session->getFlashBag()
+                    ->add("error","Snif ça marche pas :(");
              //       return $this->redirectToRoute("order_prepare");
+                    // The card has been declined
                 }
             
         }

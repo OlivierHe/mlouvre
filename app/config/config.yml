@@ -70,7 +70,7 @@ swiftmailer:
     spool:     { type: memory }
 
 endroid_qr_code:
-    size: 200
+    size: 100
     padding: 10
     extension: gif
     error_correction_level: high

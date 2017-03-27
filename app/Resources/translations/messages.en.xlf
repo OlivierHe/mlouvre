@@ -277,8 +277,8 @@
         <source>Achat de billets en ligne</source>
         <target>Online booking</target>
       </trans-unit>
-      <trans-unit id="2a8ebe215f08c339dfa48ba8ae2e0018" resname="Reservez votre billet en ligne, vous recevrez une confirmation par courriel.">
-        <source>Reservez votre billet en ligne, vous recevrez une confirmation par courriel.</source>
+      <trans-unit id="2a8ebe215f08c339dfa48ba8ae2e0018" resname="Reservez votre billet en ligne, vous receverez une confirmation par courriel.">
+        <source>Reservez votre billet en ligne, vous receverez une confirmation par courriel.</source>
         <target>Book your ticket online, you will receive an email confirmation.</target>
       </trans-unit>
       <trans-unit id="b8ceb2bcb1dbee3ff2812398de997408" resname="Ce billet vous permet de couper la file classique.">

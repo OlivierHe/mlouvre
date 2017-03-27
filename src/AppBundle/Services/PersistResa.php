@@ -21,8 +21,9 @@ class PersistResa
 	private $session;
 	private $router;
 	private $dateToday;
+	private $mailer;
 
-	public function __construct(EntityManager $doctrine,FormFactory $form,Session $session,Router $router) 
+	public function __construct(EntityManager $doctrine,FormFactory $form,Session $session,Router $router,Mailer $mailer) 
 	{
 	  date_default_timezone_set("Europe/Paris");
 
@@ -30,8 +31,8 @@ class PersistResa
 	  $this->form  = $form; 
 	  $this->session = $session;
 	  $this->router = $router;
+	  $this->mailer = $mailer;
 	  $this->dateToday = new \DateTime("now");
-	  $this->tropResa = false;
 	}
 
 	public function getForm(Request $request)
@@ -55,39 +56,47 @@ class PersistResa
 	          	$this->failedResa();
 		    }
      	}
- 
+
         $form->handleRequest($request);
-       
+
         if ($form->isSubmitted() && $form->isValid()) {
-            var_dump("form is valid");
+
         	$prixTotal = 0;
 
             foreach($moreResa->getResas() as $resa) 
             {
             	$rawVisite = $resa->getJourVisite();
             	// validation
-                $this->validType($rawVisite, $resa->getTypeBillets());
-   /*             if ($this->doctrine->getRepository('AppBundle:Resa')->findByCountTicket($rawVisite)) {
-                	$this->tropResa = true;
+                $this->validVisite($rawVisite, $resa->getTypeBillets());
+                $tropDeTicket = $em->getRepository('AppBundle:Resa')->countTicket($rawVisite);
+                if ($tropDeTicket) {
                 	$formatJv = $rawVisite->format('d/m/Y');
-                	$this->session->getFlashBag()
-                    ->add('danger', 'Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.');
-                	break;
-                }*/
+                	 $this->session->getFlashBag()
+				     ->add('danger', 'Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.');
+				     break;
+                }
+
             	$prixTicket = $this->getPrice($resa->getDateNaissance(),$resa->getTarifReduit());
             	$resa->setResaNumber();
             	$resa->setPrixTicket($prixTicket);
             	$prixTotal += $prixTicket;
 			}
-				var_dump($this->tropResa);
-	             
-	            if($this->tropResa) {
-	            	var_dump("dans trop resa");
+
+	            
+
+	            if(!$tropDeTicket) {
 	            	$moreResa->setPrixTotal($prixTotal);
                     $request->getSession()->set('prix_total', $prixTotal);  
                     $request->getSession()->set('more_resa',$moreResa);
-		            $te = new RedirectResponse('paiement');
-		    	    return $te->send();
+                    if($prixTotal == 0) {
+                    	$this->persistTickets();
+                    	$this->mailer->sendBillets($moreResa->getResas()->first()->getEmail());
+                    	$te = new RedirectResponse('succesresa');
+			    	    $te->send();
+                    } else {
+			            $te = new RedirectResponse('paiement');
+			    	    $te->send();
+		    	    }
 	            }
         }
 
@@ -110,26 +119,23 @@ class PersistResa
         return $fail->send();
 	}
 
-	private function validType($jourVisite,$typeBillets)
+	private function validVisite($jourVisite,$typeBillets)
     {
         $dateToday = $this->dateToday;
-       // $disabledDay = array("01/01","01/05","08/08","14/07","15/08","01/11","11/11","25/12");
         $formatJv = $jourVisite->format('d/m');
         $formatDt = $dateToday->format('d/m');
-       // $formatDay = $jourVisite->format('l');
 
-	//	if (in_array($formatJv, $disabledDay) || $formatDay == "Tuesday" || $formatDay == "Sunday") {
-	//		$this->failedResa();
 		if((date("H:i")) >= "14:00" AND $formatDt == $formatJv AND $typeBillets == "Journée") {
 			$this->failedResa();
 		}
     }
 
+
 	private function getPrice($birthDate,$tarifReduit) 
 	{
-		$dateToday = $this->dateToday;
+	    $dateToday = $this->dateToday;
 		$interval = $birthDate->diff($dateToday);
-		$age = $interval->format('%y');
+        $age =  $interval->format('%y');
 		$ageInt = intval($age);
 
   		if ($ageInt < 4):

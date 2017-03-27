@@ -10,7 +10,7 @@ namespace AppBundle\Repository;
  */
 class ResaRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findByCountTicket($rawVisite)
+    public function countTicket($rawVisite)
     {
          $jVisite = $rawVisite->format('Y-m-d');
          $query = $this->_em->createQuery(

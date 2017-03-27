@@ -46,13 +46,13 @@
                     return [ array.indexOf(string) == -1 && day != 2 && day != 0 ];
             }
 
-          /*  $( ".jour_visite" ).focusin(function() {
+            $( ".jour_visite" ).focusin(function() {
                $(this).prop('readonly', true);
             });
 
             $( ".jour_visite" ).focusout(function() {
                $(this).prop('readonly', false);
-            });*/
+            });
       
             $('.jour_visite').datepicker({
                 minDate:0,
@@ -168,8 +168,9 @@
     <input type="submit" class="btn btn-primary marge-btn" value="{{ "Envoyer" | trans}}"/>
     <p>{{ "Tous les champs sont obligatoires" | trans}}.<br>
 
-    {{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,<br>
-        plus de détails dans la section Accès et infos pratiques" | trans}}</p>
+    {{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+        plus de détails dans la section Accès et infos pratiques" | trans}}
+        <br>En cas de billets gratuits les billets sont envoyé au courriel du premier billet.</p>
 {{ form_end(form) }}
 
 {% endblock %}
