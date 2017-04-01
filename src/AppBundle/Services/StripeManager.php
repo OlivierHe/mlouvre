@@ -39,19 +39,12 @@ class StripeManager {
                         "amount" => ($this->session->get('prix_total')*100), // Amount in cents
                         "currency" => "eur",
                         "source" => $request->request->get('stripeToken'),
-                        "description" => "Paiement Stripe - OpenClassrooms Exemple"
+                        "description" => "Paiement Stripe - Musée du Louvre"
                     ));
-                    $this->session->getFlashBag()
-                    ->add("success","Bravo ça marche !");
                     $this->mailer->sendBillets($request->request->get('stripeEmail'));
                     $this->persistresa->persistTickets();
-           //         return $this->redirectToRoute("order_prepare");
                 } catch(\Stripe\Error\Card $e) {
-                    var_dump("Denied !");
-                    $this->session->getFlashBag()
-                    ->add("error","Snif ça marche pas :(");
-             //       return $this->redirectToRoute("order_prepare");
-                    // The card has been declined
+                    $e->getMessage();
                 }
             
         }

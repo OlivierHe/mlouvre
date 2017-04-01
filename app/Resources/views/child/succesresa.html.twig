@@ -11,9 +11,9 @@
 
 {% block section %}
 	<div id="cgv">
-		Votre reservation a bien été prise en compte.<br>
-		Vous allez recevoir vos billets sur le courriel renseigné lors du paiement,<br>
-		ou sur le premier billet dans le cas de billets gratuits.
+		{{ "Votre reservation a bien été prise en compte." | trans}}<br>
+		{{ "Vous allez recevoir vos billets sur le courriel renseigné lors du paiement" | trans}},<br>
+		{{ "ou sur le premier billet dans le cas de billets gratuits" | trans}}.
 	</div>
 {% endblock %}
 

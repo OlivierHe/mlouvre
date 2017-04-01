@@ -72,7 +72,7 @@ class PersistResa
                 if ($tropDeTicket) {
                 	$formatJv = $rawVisite->format('d/m/Y');
                 	 $this->session->getFlashBag()
-				     ->add('danger', 'Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.');
+				     ->add('danger',  $this->get('translator')->trans('Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.'));
 				     break;
                 }
 
@@ -142,7 +142,7 @@ class PersistResa
   			return 0;
   		elseif($ageInt >= 4 AND $ageInt < 12):
   			return 8;
-  		elseif ($tarifReduit):
+  		elseif($tarifReduit):
 			return 10;
   		elseif($ageInt >= 60):
   			return 12;

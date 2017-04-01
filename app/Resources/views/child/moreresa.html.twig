@@ -60,11 +60,11 @@
                 onSelect: function() {
                     $idJour = this.id;
                     var idType = $idJour.replace("jour_visite", "type_billets");
-                    var option = $('<option></option>').attr("value", "Demi-journée").text("Demi-journée");
-                    var option2 = $('<option></option>').attr("value", "Journée").text("Journée");
+                    var option = $('<option></option>').attr("value", "Demi-journée").text('{{ "Demi-journée" | trans}}');
+                    var option2 = $('<option></option>').attr("value", "Journée").text('{{ "Journée" | trans}}');
                     if ("{{ "now"|date("d/m/Y") }}" == this.value) {
                         if({{ "now"|date("Hi") }} >= 1400) {
-                            alert("Seul le billet demi journée est disponible, pour une réservation après 14 heures le jour même"); 
+                            alert('{{ "Seul le billet demi journée est disponible, pour une réservation après 14 heures le jour même" | trans}}'); 
                             $("#"+ idType).empty().append(option); 
                         }    
                     } else {
@@ -170,7 +170,7 @@
 
     {{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
         plus de détails dans la section Accès et infos pratiques" | trans}}
-        <br>En cas de billets gratuits les billets sont envoyé au courriel du premier billet.</p>
+        <br>{{ "En cas de billets gratuits les billets sont envoyé au courriel du premier billet" | trans}}.</p>
 {{ form_end(form) }}
 
 {% endblock %}

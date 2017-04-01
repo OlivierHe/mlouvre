@@ -22,7 +22,6 @@ class MainController extends Controller
     public function accueilAction(Request $request,$_locale)
     {
         $request->getSession()->set('_locale', $_locale);
-
         return $this->render('child/accueil.html.twig');
     }
 
@@ -33,14 +32,6 @@ class MainController extends Controller
     {
 
         return $this->render('child/traduction.html.twig');
-    }
-
-     /**
-     * @Route("/cgv", name="cgv")
-     */
-    public function cgvAction()
-    {
-        return $this->render('child/cgv.html.twig');
     }
 
      /**
@@ -59,8 +50,7 @@ class MainController extends Controller
         
          $form = $this->createForm('AppBundle\Form\ContactType',null,array('attr' => array('class' => 'form-horizontal')));
 
-        if ($request->isMethod('POST')) {
-            // Refill the fields in case the form is not valid.
+
             $form->handleRequest($request);
 
             if($form->isValid()){
@@ -68,7 +58,7 @@ class MainController extends Controller
                 
                 $this->get('app.mailer')->send($data);
             }
-        }
+
 
         return $this->render('child/contact.html.twig', array(
             'form' => $form->createView()

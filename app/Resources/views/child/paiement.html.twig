@@ -12,8 +12,8 @@
 {% if app.session.has('prix_total') %}
 <div id="cgv">	
 	<ul class="list-group">
-	  <li class="list-group-item list-group-item-success"><strong>Paiement</strong></li>
-	  <li class="list-group-item list-group-item-warning"><strong>Vous devez régler {{ app.session.get('prix_total') }},00  &euro; </strong></li>
+	  <li class="list-group-item list-group-item-success"><strong>{{ "Paiement" | trans}}</strong></li>
+	  <li class="list-group-item list-group-item-warning"><strong>{{ "Vous devez régler" | trans}} {{ app.session.get('prix_total') }},00  &euro; </strong></li>
 	</ul>
         <form action="/succesresa" method="POST">
 			<script
@@ -22,10 +22,10 @@
 			  data-amount="{{ app.session.get('prix_total')*100 }}"
 			  data-currency="EUR"
 			  data-name="Musée du Louvre"
-			  data-description="Reservation de tickets"
+			  data-description="{{ "Reservation de tickets" | trans}}"
 			  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
 			  data-locale="auto"
-			  data-label="Payer"
+			  data-label={{ "Payer" | trans}}
 			  data-zip-code="false">
 			</script>
 		</form>
