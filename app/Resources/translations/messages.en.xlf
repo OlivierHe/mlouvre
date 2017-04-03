@@ -730,6 +730,10 @@ on site sales, group sales, online or from partners agency.</target>
         <source>Prix ttc</source>
         <target>Price</target>
       </trans-unit>
+       <trans-unit id="748294d8902ea8bbdeea0efcbdff098" resname="Votre message à été envoyé, vous recevrez une réponse dans les 48 heures">
+        <source>Votre message à été envoyé, vous recevrez une réponse dans les 48 heures</source>
+        <target>Your message has been sent, you will receive an answer within 48 hours</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

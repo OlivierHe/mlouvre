@@ -9,7 +9,7 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
     app.mailer:
        class: AppBundle\Services\Mailer
-       arguments: ["@mailer","@twig"]
+       arguments: ["@mailer","@twig","@session","@translator"]
     app.locale_listener:
         class: AppBundle\EventListener\LocaleListener
         arguments: ['%kernel.default_locale%']

@@ -2,16 +2,22 @@
 // src/AppBundle/Services/Mailer.php
 namespace AppBundle\Services;
 
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class Mailer {
 
     private $mailer;
     private $twig;
+    private $session;
+    private $translator;
 
-    public function __construct(\Swift_Mailer $mailer,\Twig_environment $twig)
+    public function __construct(\Swift_Mailer $mailer,\Twig_environment $twig, Session $session,TranslatorInterface $translator)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
+        $this->session = $session;
+        $this->translator = $translator;
     }
     
     public function send($data) {
@@ -26,7 +32,9 @@ class Mailer {
                                 array('nom' => $data["nom"], 'prenom' => $data["prenom"], 'message' => $data["message"], 'email' => $data["email"])
                             ),'text/html');
          
-                
+        $this->session->getFlashBag()
+             ->add('success', $this->translator->trans('Votre message à été envoyé, vous recevrez une réponse dans les 48 heures'));          
+
         $this->mailer->send($message);
         
         

@@ -12,6 +12,13 @@
 {% endblock %}
 
 {% block section %}
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+               <b> {{ msg }} </b>
+            {% endfor %}
+        </div>
+    {% endif %}
     {{ form_start(form) }}
     {{ form_errors(form) }}
     {{ form_widget(form) }}
