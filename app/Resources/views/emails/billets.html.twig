@@ -9,28 +9,37 @@
 {% set more_resa = app.session.get('more_resa') %}
 {% set uri = '127.0.0.1:8000/check/' %}
   {% for resa in more_resa.resas %}
-   <table style="width:600px;  overflow-x:auto; border: 1px solid grey; text-align:center; background-color:white">
+   <table style="width:600px;  overflow-x:auto; border: 1px solid grey; text-align:center; background-image:url(images/logo.gif); background-size: contain;">
 	  <tr style="background-color:ghostwhite">
 	    <th>{{resa.prenom}}</th>
 	    <th>{{resa.nom}}</th>
 	    <td>dn : {{resa.DateNaissance|date("d/m/Y")}}</td>
 	  </tr>
 	  <tr>
-	    <th>Date de visite: </th>
-	    <td style="background-color:ghostwhite">{{resa.JourVisite|date("d/m/Y")}}</td>
-	    <td rowspan="3"><img src="{{ qrcode_url( uri ~ resa.ResaNumber ) }}" /></td>
+	    <th>{{ "Date de visite" | trans}}</th>
+	    <td>{{resa.JourVisite|date("d/m/Y")}}</td>
+	    <td rowspan="3" style="width:150px"><img src="{{ qrcode_url( uri ~ resa.ResaNumber ) }}" /></td>
 	  </tr>
 	  <tr>
-	    <th>Type de billet</th>
-	    <td style="background-color:ghostwhite">{{resa.TypeBillets}}</td>
+	    <th>{{ "Type de billet" | trans}}</th>
+	    <td>
+	    {% if resa.TypeBillets  == 'Journée' %}
+       		{{ "Journée" | trans}}
+        {% else %}
+		    {{ "Demi-journée" | trans}}
+		{% endif %}
+		</td>
 	  </tr>
 	  <tr>
-	    <th>Tarif réduit</th>
-	    <td style="background-color:ghostwhite">{{resa.TarifReduit ? 'oui' : 'non'}}</td>
+	    <th>{{ "Tarif réduit" | trans}}</th>
+	    <td>{{resa.TarifReduit ? 'oui'| trans : 'non'| trans }}</td>
 	  </tr>
-	    <tr style="background-color:papayawhip">
-	    <th colspan="2">Prix ttc </th>
+	    <tr style="background-color:papayawhip"> 
+	    <th colspan="2">{{ "Prix ttc" | trans}}</th>
 	    <td><b>{{resa.PrixTicket}} euro</b></td>
+	  </tr>
+	  <tr>
+	 <td colspan="3" style="background-color:papayawhip">{{ resa.ResaNumber }}</td>
 	  </tr>
 	</table>
   {% endfor %}
