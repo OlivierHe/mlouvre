@@ -4,6 +4,7 @@ namespace AppBundle\Services;
 
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Translation\TranslatorInterface;
+use Endroid\QrCode\QrCode;
 
 class Mailer {
 
@@ -41,6 +42,9 @@ class Mailer {
     }
 
       public function sendBillets($emailTo) {
+
+        // $qrCode = new QrCode();
+       // $qrCode->setText('Life is too short to be generating QR codes');
         
         $message = \Swift_Message::newInstance()
                 ->setSubject("Billets pour le musée du Louvre")

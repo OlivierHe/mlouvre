@@ -94,7 +94,7 @@ class Resa
     protected $prix_ticket;
 
     /**
-    * @ORM\Column(type="string", length=32)
+    * @ORM\Column(type="string", length=64)
     */
     protected $resa_number;
 
