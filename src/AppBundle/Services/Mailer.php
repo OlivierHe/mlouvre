@@ -43,8 +43,7 @@ class Mailer {
 
       public function sendBillets($emailTo) {
 
-        // $qrCode = new QrCode();
-       // $qrCode->setText('Life is too short to be generating QR codes');
+ 
         
         $message = \Swift_Message::newInstance()
                 ->setSubject("Billets pour le musée du Louvre")
@@ -53,6 +52,27 @@ class Mailer {
                 ->setBody(
                             $this->twig->render(
                                 'emails/billets.html.twig'),'text/html');
+
+        $message->attach(\Swift_Attachment::fromPath('images/logo.gif'));
+
+
+        $moreResa = $this->session->get('more_resa');
+
+        foreach($moreResa->getResas() as $key => $resa) {
+
+            //var_dump($resa->getResaNumber());
+
+            $qrCode = new QrCode();
+            $qrCode->setText($resa->getResaNumber());
+
+            // You can alternatively use method chaining to build the attachment
+            $attachment = \Swift_Attachment::newInstance()
+                            ->setFilename('qrcode'.$key.'.png')
+                            ->setContentType($qrCode->getContentType())
+                            ->setBody($qrCode->render());
+
+            $message->attach($attachment);
+        }
                  
         $this->mailer->send($message);
         

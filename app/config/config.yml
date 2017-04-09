@@ -72,9 +72,10 @@ swiftmailer:
 endroid_qr_code:
     size: 150
     padding: 10
-    extension: gif
+    extension: png
     error_correction_level: high
     foreground_color: { r: 0, g: 0, b: 0, a: 0 }
     background_color: { r: 255, g: 255, b: 255, a: 0 }
     label: "Musée du Louvre"
     label_font_size: 9
+
