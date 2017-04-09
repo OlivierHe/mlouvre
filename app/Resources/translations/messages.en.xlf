@@ -551,31 +551,6 @@ on site sales, group sales, online or from partners agency.</target>
 
 	</target>
       </trans-unit>
-      <trans-unit id="cbc5a8f40fb1608ae18c8a65552f77f1" resname="L’acheteur envoie un bon de commande, selon le modèle joint en annexe, dûment rempli à&#10;&#9;&#9;l’adresse suivante :&#10;&#9;&#9;Musée du Louvre&#10;&#9;&#9;Billetterie en nombre - Service vente et réservation à distance –&#10;&#9;&#9;162 rue de Rivoli&#10;&#9;&#9;75058 PARIS cedex 01&#10;&#9;&#9;billetterieennombre@louvre.fr&#10;&#9;&#9;Un minimum de 20 billets par commande est requis.&#10;&#9;&#9;Les bons de commande incomplets ne sont pas traités par l’EPML qui en informera l’acheteur.&#10;&#9;&#9;Le bon de commande vaut pour engagement et constitue une acceptation irrévocable qui ne peut être&#10;&#9;&#9;remise en cause que dans les cas limitativement prévus aux présentes conditions générales à l’article&#10;&#9;&#9;&quot;Exécution de la commande&quot;.&#10;&#9;&#9;L’acheteur peut joindre un paiement ou faire la demande au préalable d’une facture pro forma, avant&#10;&#9;&#9;d’effectuer le règlement.">
-        <source>L’acheteur envoie un bon de commande, selon le modèle joint en annexe, dûment rempli à
-		l’adresse suivante :
-		Musée du Louvre
-		Billetterie en nombre - Service vente et réservation à distance –
-		162 rue de Rivoli
-		75058 PARIS cedex 01
-		billetterieennombre@louvre.fr
-		Un minimum de 20 billets par commande est requis.
-		Les bons de commande incomplets ne sont pas traités par l’EPML qui en informera l’acheteur.
-		Le bon de commande vaut pour engagement et constitue une acceptation irrévocable qui ne peut être
-		remise en cause que dans les cas limitativement prévus aux présentes conditions générales à l’article
-		"Exécution de la commande".
-		L’acheteur peut joindre un paiement ou faire la demande au préalable d’une facture pro forma, avant
-		d’effectuer le règlement.</source>
-        <target>The buyer send an order form, according to the following document, filled and sended to this adress :
-		Musée du Louvre
-		Billetterie en nombre - Service vente et réservation à distance –
-		162 rue de Rivoli
-		75058 PARIS cedex 01
-		billetterieennombre@louvre.fr
-		A minimum of 20 tickets per order is required.
-		Unfinished order form are not processed by the EPML in this case informing the buyer.
-		</target>
-      </trans-unit>
       <trans-unit id="313deacad6da188f87a9d46e14fbf387" resname="Toutes les commandes, quelle que soit leur origine, sont payables en euros.&#10;&#9;&#9;Dans le cadre fixé par le décret n°2004-836 du 20 août 2004 pris en application de l’article 1341 du&#10;&#9;&#9;code civil, l’EPML a opté pour un plafonnement du règlement par carte bancaire à 1500€.&#10;&#9;&#9;Le règlement s’effectue :&#10;&#9;&#9;- Par chèque à l’ordre de M. l’Agent comptable de l’Etablissement Public du Musée du&#10;&#9;&#9;Louvre (à envoyer à Musée du Louvre -Billetterie en nombre - Service vente et réservation&#10;&#9;&#9;à distance- 75058 Paris cedex 01).&#10;&#9;&#9;- Par virement à l’ordre de M. l’Agent comptable de l’Etablissement Public du Musée du&#10;&#9;&#9;Louvre sur le compte IBAN FR76 1007 1750 0000 0010 0035 291.&#10;&#9;&#9;L’acheteur doit porter en objet de son virement la mention BN suivi des initiales de sa société (8&#10;&#9;&#9;caractères maximum) et en informer le musée du Louvre à billetterieennombre@louvre.fr et&#10;&#9;&#9;agence.comptable@louvre.fr .&#10;&#9;&#9;- Par carte bancaire : la mention du numéro de carte, de sa date d'expiration et de son&#10;&#9;&#9;numéro crypto sur le bon de commande vaut mandat de payer le montant total de la&#10;&#9;&#9;commande. Le bon de commande doit impérativement être signé par le porteur de la&#10;&#9;&#9;carte de paiement sans quoi la commande ne pourra pas être traitée.&#10;&#9;&#9;Les cartes acceptées sont les cartes des réseaux CARTE BLEUE, VISA, EUROCARD&#10;&#9;&#9;MASTERCARD, AMERICAN EXPRESS, JCB.&#10;&#9;&#9;Les données relatives à la carte bancaire ne sont conservées que pendant le temps de traitement de&#10;&#9;&#9;la commande.">
         <source>Toutes les commandes, quelle que soit leur origine, sont payables en euros.
 		Dans le cadre fixé par le décret n°2004-836 du 20 août 2004 pris en application de l’article 1341 du
@@ -730,9 +705,13 @@ on site sales, group sales, online or from partners agency.</target>
         <source>Prix ttc</source>
         <target>Price</target>
       </trans-unit>
-       <trans-unit id="748294d8902ea8bbdeea0efcbdff098" resname="Votre message à été envoyé, vous recevrez une réponse dans les 48 heures">
+      <trans-unit id="a0f045f72328fff086fc356c20408913" resname="Votre message à été envoyé, vous recevrez une réponse dans les 48 heures">
         <source>Votre message à été envoyé, vous recevrez une réponse dans les 48 heures</source>
         <target>Your message has been sent, you will receive an answer within 48 hours</target>
+      </trans-unit>
+      <trans-unit id="413b9f4f92773e856e97d7efa608598f" resname="La réservation a bien été prise en compte, vous allez recevoir vos billets sur le courriel du premier billet.">
+        <source>La réservation a bien été prise en compte, vous allez recevoir vos billets sur le courriel du premier billet.</source>
+        <target>Your booking is successfully registered, you will receive your tickets on the ticket first mail address</target>
       </trans-unit>
     </body>
   </file>

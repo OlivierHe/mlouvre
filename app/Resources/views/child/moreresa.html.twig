@@ -137,41 +137,51 @@
             {% endfor %}
         </div>
     {% endif %}
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+               <b> {{ msg }} </b>
+            {% endfor %}
+        </div>
+    {% else %}
+    
 
-<div style="display: none;"  id="dialog-confirm" title="{{ "Suppression de billet" | trans}}">
-  <p class="alert alert-danger"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>{{ "Etes vous sûr de vouloir supprimer le billet ?" | trans}}</p>
-</div>
+	<div style="display: none;"  id="dialog-confirm" title="{{ "Suppression de billet" | trans}}">
+	  <p class="alert alert-danger"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>{{ "Etes vous sûr de vouloir supprimer le billet ?" | trans}}</p>
+	</div>
 
-{{ form_start(form) }}
+	{{ form_start(form) }}
 
-{# {{ form_widget(form) }} #}
+	{# {{ form_widget(form) }} #}
 
-{% for resa in form.resas %}
-    <div id="billet{{ loop.index }}">
-        <h2>{{ "Billet" | trans}} n°{{ loop.index }}</h2>
-        <h3>{{ "Coordonnées" | trans}}</h3>
-        {{ form_row(resa.nom) }}
-        {{ form_row(resa.prenom) }}
-        {{ form_row(resa.email) }}
-        {{ form_row(resa.pays) }}
-        {{ form_row(resa.date_naissance) }}
-        <hr>
-        <h3>{{ "Reservation de billets" | trans}}</h3>
-        {{ form_row(resa.jour_visite) }}
-        {{ form_row(resa.type_billets) }}
-        {{ form_row(resa.tarif_reduit) }}
-        <input type="button" id="del" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="{{ "Supprimer le billet" | trans}}"/>
-    </div>
-{% endfor %}
+	{% for resa in form.resas %}
+		<div id="billet{{ loop.index }}">
+			<h2>{{ "Billet" | trans}} n°{{ loop.index }}</h2>
+			<h3>{{ "Coordonnées" | trans}}</h3>
+			{{ form_row(resa.nom) }}
+			{{ form_row(resa.prenom) }}
+			{{ form_row(resa.email) }}
+			{{ form_row(resa.pays) }}
+			{{ form_row(resa.date_naissance) }}
+			<hr>
+			<h3>{{ "Reservation de billets" | trans}}</h3>
+			{{ form_row(resa.jour_visite) }}
+			{{ form_row(resa.type_billets) }}
+			{{ form_row(resa.tarif_reduit) }}
+			<input type="button" id="del" name="billet{{ loop.index }}" class="btn btn-danger marge-btn pull-right" value="{{ "Supprimer le billet" | trans}}"/>
+		</div>
+	{% endfor %}
 
-{{ form_errors(form) }}
-    <input type="submit" class="btn btn-primary marge-btn" value="{{ "Envoyer" | trans}}"/>
-    <p>{{ "Tous les champs sont obligatoires" | trans}}.<br>
+	{{ form_errors(form) }}
+		<input type="submit" class="btn btn-primary marge-btn" value="{{ "Envoyer" | trans}}"/>
+		<p>{{ "Tous les champs sont obligatoires" | trans}}.<br>
 
-    {{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
-        plus de détails dans la section Accès et infos pratiques" | trans}}.
-        <br>{{ "En cas de billets gratuits les billets sont envoyé au courriel du premier billet" | trans}}.</p>
-{{ form_end(form) }}
+		{{ "En cas de tarifs réduits ou spéciaux une pièce justificative vous sera demandée,
+			plus de détails dans la section Accès et infos pratiques" | trans}}.
+			<br>{{ "En cas de billets gratuits les billets sont envoyé au courriel du premier billet" | trans}}.</p>
+	{{ form_end(form) }}
+
+    {% endif %}
 
 {% endblock %}
 

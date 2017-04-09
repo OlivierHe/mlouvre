@@ -7,9 +7,9 @@
 </head>
 <body>
 {% set more_resa = app.session.get('more_resa') %}
-{% set uri = '127.0.0.1:8000/check/' %}
+{% set uri = 'http://93.118.34.67/images/' %}
   {% for resa in more_resa.resas %}
-   <table style="width:600px;  overflow-x:auto; border: 1px solid grey; text-align:center; background-image:url(logo.gif); background-size: contain;">
+   <table style="width:600px;  overflow-x:auto; border: 1px solid grey; text-align:center; background-image:url({{ uri }}logo.gif); background-size: contain;">
 	  <tr style="background-color:ghostwhite">
 	    <th>{{resa.prenom}}</th>
 	    <th>{{resa.nom}}</th>
@@ -18,7 +18,7 @@
 	  <tr>
 	    <th>{{ "Date de visite" | trans}}</th>
 	    <td>{{resa.JourVisite|date("d/m/Y")}}</td>
-	    <td rowspan="3" style="width:150px"><img src="qrcode{{ loop.index0 }}.png" /></td>
+	    <td rowspan="3" style="width:150px"><img src="{{ uri ~ 'resa_qrcode/'  ~ resa.ResaNumber }}.png" /></td>
 	  </tr>
 	  <tr>
 	    <th>{{ "Type de billet" | trans}}</th>

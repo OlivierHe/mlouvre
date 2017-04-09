@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class PersistResa 
 {
@@ -22,8 +23,9 @@ class PersistResa
 	private $router;
 	private $dateToday;
 	private $mailer;
+	private $translator;
 
-	public function __construct(EntityManager $doctrine,FormFactory $form,Session $session,Router $router,Mailer $mailer) 
+	public function __construct(EntityManager $doctrine,FormFactory $form,Session $session,Router $router,Mailer $mailer,TranslatorInterface $translator) 
 	{
 	  date_default_timezone_set("Europe/Paris");
 
@@ -32,6 +34,7 @@ class PersistResa
 	  $this->session = $session;
 	  $this->router = $router;
 	  $this->mailer = $mailer;
+	  $this->translator = $translator;
 	  $this->dateToday = new \DateTime("now");
 	}
 
@@ -41,6 +44,7 @@ class PersistResa
 
         if(!isset($form)) 
         {
+
 			$moreResa = new MoreResa();
 	       
 	        $qty = $request->getSession()->get('quantite_ticket');
@@ -65,14 +69,14 @@ class PersistResa
 
             foreach($moreResa->getResas() as $resa) 
             {
+
             	$rawVisite = $resa->getJourVisite();
             	// validation
                 $this->validVisite($rawVisite, $resa->getTypeBillets());
                 $tropDeTicket = $em->getRepository('AppBundle:Resa')->countTicket($rawVisite);
                 if ($tropDeTicket) {
                 	$formatJv = $rawVisite->format('d/m/Y');
-                	 $this->session->getFlashBag()
-				     ->add('danger',  $this->get('translator')->trans('Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.'));
+                	 $this->session->getFlashBag()->add('danger',  $this->translator->trans('Trop de réservations à la date du '.$formatJv. ' Veuillez choisir un autre jour.'));
 				     break;
                 }
 
@@ -83,16 +87,14 @@ class PersistResa
 			}
 
 	            
-
 	            if(!$tropDeTicket) {
 	            	$moreResa->setPrixTotal($prixTotal);
                     $request->getSession()->set('prix_total', $prixTotal);  
                     $request->getSession()->set('more_resa',$moreResa);
                     if($prixTotal == 0) {
-                    	$this->persistTickets();
-                    	$this->mailer->sendBillets($moreResa->getResas()->first()->getEmail());
-                    	$te = new RedirectResponse('succesresa');
-			    	    $te->send();
+                        $this->mailer->sendBillets($moreResa->getResas()->first()->getEmail());
+						$this->persistTickets();
+						$this->session->getFlashBag()->add('success',  $this->translator->trans('La réservation a bien été prise en compte, vous allez recevoir vos billets sur le courriel du premier billet.'));
                     } else {
 			            $te = new RedirectResponse('paiement');
 			    	    $te->send();
@@ -108,7 +110,6 @@ class PersistResa
 	{
 		$em = $this->doctrine;
 		$moreResa = $this->session->get('more_resa');
-		// verifieer si l'entité est null
 		$em->persist($moreResa);
 		$em->flush();
 	}
