@@ -69,7 +69,7 @@ class Mailer {
             $attachment = \Swift_Attachment::newInstance()
                             ->setFilename('qrcode'.$key.'.png')
                             ->setContentType($qrCode->getContentType())
-                            ->setBody($qrCode->render());
+                            ->setBody($qrCode->get());
 
             $message->attach($attachment);
         }
