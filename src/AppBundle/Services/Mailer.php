@@ -73,9 +73,10 @@ class Mailer {
 
             $message->attach($attachment);
         }
-                 
-        $this->mailer->send($message);
-        
+          var_dump($message);
+          $this->mailer->send($message);
+          
+
         
     }
 
