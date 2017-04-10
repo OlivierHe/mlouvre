@@ -61,12 +61,12 @@
         <source>Quantité de billets</source>
         <target>Tickets quantities</target>
       </trans-unit>
-      <trans-unit id="a85d715393653bbe466e98039549e75b" resname="Billeterie du Louvre">
-        <source>Billeterie du Louvre</source>
+      <trans-unit id="a85d715393653bbe466e98039549e75b" resname="Billetterie du Louvre">
+        <source>Billetterie du Louvre</source>
         <target>Louvre Ticketing Service</target>
       </trans-unit>
-      <trans-unit id="b635b6dd13bc3bfe6383c7a9880e45e1" resname="Billeterie non officielle">
-        <source>Billeterie non officielle</source>
+      <trans-unit id="b635b6dd13bc3bfe6383c7a9880e45e1" resname="Billetterie non officielle">
+        <source>Billetterie non officielle</source>
         <target>Non official ticketing service</target>
       </trans-unit>
       <trans-unit id="d4700b697a54fbd43a1a613d32694e7f" resname="Nom">
